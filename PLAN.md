@@ -351,7 +351,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: mavjud id 204, takroriy DELETE 404; yetim to‘lov qolmaydi.
   - Tekshirish: bog‘liq to‘lovli DB fixture’ni o‘chirish va ikki jadvalni tekshirish.
 
-- [ ] TASK-013 — To‘lov qo‘shish
+- [x] TASK-013 — To‘lov qo‘shish
   - Tavsif: POST `/api/payments`; mavjud o‘quvchiga valid summa va sana yozish.
   - Bog‘liq: TASK-010, TASK-009.
   - Fayllar: `src/services/payments.ts`, `src/app/api/payments/route.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 13 |
-| Qolgan | 33 |
-| Bajarilish foizi | 28.3% |
-| Hozirgi bosqich | TASK-012 tekshirildi |
+| Bajarilgan | 14 |
+| Qolgan | 32 |
+| Bajarilish foizi | 30.4% |
+| Hozirgi bosqich | TASK-013 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

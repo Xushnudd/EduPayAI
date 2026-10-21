@@ -74,3 +74,7 @@ Birinchi PATCH smoke assertion 500 sabab o‘tmadi, lekin orchestration keyingi 
 ### TASK-012 — 2026-10-21T10:38:54+00:00
 
 Taxminan 1 daqiqa. Test student uchun payment yaratildi; HTTP DELETE 204, DB payment count 0, takroriy DELETE 404. Faqat sessiya yaratgan fixture o‘chirildi.
+
+### TASK-013 — 2026-10-21T10:39:14+00:00
+
+Taxminan 1 daqiqa. HTTP payment 201, amount 0.10/date 2024-02-29 aniq; invalid amount 400; missing student 404.
