@@ -98,3 +98,7 @@ Taxminan 1 daqiqa. Real PostgreSQL: Ali 200000, Sardor 450000, Vali yo‘q; qo�
 ### TASK-018 — 2026-10-21T10:41:01+00:00
 
 Taxminan 1 daqiqa. Aynan /debtors?month=2026-10 HTTP 200; yo‘q/invalid month 400; paymentdan keyin yangi natija, ortiqcha to‘lovli student ro‘yxatdan chiqdi.
+
+### TASK-040 — 2026-10-21T15:27:16+00:00
+
+Davom sessiyasi 20:23–20:28 Asia/Tashkent, taxminan 5 daqiqa (oldingi sessiya tanaffusi hisoblanmadi). OpenSSL yetishmasligi base qatlamida openssl/ca-certificates bilan tuzatildi. Podman build exit 0: Prisma generate, Next production build va TypeScript DB’siz o‘tdi. Runner network none’da non-root, lokal Prisma CLI, schema/migratsiyalar va .env/.git yo‘qligi assertion bilan tekshirildi; builder’da ham .env/.git yo‘q. Runtime npm audit 0 vulnerability. Docker CLI yo‘q — Docker moslik tekshiruvi deb da’vo qilinmaydi.

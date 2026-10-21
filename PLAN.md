@@ -558,7 +558,7 @@ Mavjud TASK-001–038 saqlanadi. Yangi ID’lar bajarilish vaqti emas; haqiqiy t
   - Mezon: Compose uchun `db`, npm dev uchun `localhost`; namunalarda secret yo‘q; haqiqiy env/dump Git’dan chiqarilgan; browser env’da URL yo‘q.
   - Tekshirish: namuna va ignore qoidalarini ko‘rish, yo‘q env xatosini tekshirish; haqiqiy qiymatlarni chiqarmaslik.
 
-- [ ] TASK-040 — Multi-stage Dockerfile va build context
+- [x] TASK-040 — Multi-stage Dockerfile va build context
   - Tavsif: dependencies/builder/runner bosqichlarini, runtime Prisma CLI/client va non-root app’ni tayyorlash.
   - Bog‘liq: TASK-006, TASK-039.
   - Fayllar: `Dockerfile`, `.dockerignore`, `package.json`, `package-lock.json`, zarur bo‘lsa Next.js konfiguratsiyasi.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 19 |
-| Qolgan | 27 |
-| Bajarilish foizi | 41.3% |
-| Hozirgi bosqich | TASK-018 tekshirildi |
+| Bajarilgan | 20 |
+| Qolgan | 26 |
+| Bajarilish foizi | 43.5% |
+| Hozirgi bosqich | TASK-040 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
