@@ -411,7 +411,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: barcha maydonlar label bilan, bo‘sh ro‘yxat tushunarli; UI API ulanishiga tayyor.
   - Tekshirish: demo props bilan mobil forma va ro‘yxatni ko‘rish.
 
-- [ ] TASK-021 — Tafsilot, tahrirlash va o‘chirish UI’si
+- [x] TASK-021 — Tafsilot, tahrirlash va o‘chirish UI’si
   - Tavsif: o‘quvchi sahifasi, qayta ishlatiladigan forma, tarix o‘chishi haqidagi tasdiq oynasini yaratish.
   - Bog‘liq: TASK-020.
   - Fayllar: `src/app/students/[id]/page.tsx`, `src/components/student-form.tsx`, `src/components/delete-student-dialog.tsx`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 24 |
-| Qolgan | 22 |
-| Bajarilish foizi | 52.2% |
-| Hozirgi bosqich | TASK-020 tekshirildi |
+| Bajarilgan | 25 |
+| Qolgan | 21 |
+| Bajarilish foizi | 54.3% |
+| Hozirgi bosqich | TASK-021 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

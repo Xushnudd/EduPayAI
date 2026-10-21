@@ -118,3 +118,7 @@ Taxminan 3 daqiqa (Chromium o‘rnatish bilan). Mobil 360x800 va desktop 1280x80
 ### TASK-020 — 2026-10-21T15:35:12+00:00
 
 Taxminan 3 daqiqa. StudentForm, StudentList va sahifa yaratildi. Mobil/desktop 4/4 UI test: label, validation, link, empty state, overflow. Lint effect callback ogohlantirishi promise handler bilan tuzatildi; lint/typecheck va qayta browser testlar o‘tdi. Formani ishlatish uchun minimal UI request helper qo‘shildi; umumiy API integratsiya acceptance TASK-025 uchun ochiq, real DB UI oqimi bu vazifada da’vo qilinmaydi.
+
+### TASK-021 — 2026-10-21T15:36:39+00:00
+
+Taxminan 2 daqiqa. Tafsilot sahifasi, qayta ishlatilgan StudentForm, tarif ta’siri izohi va native dialog yaratildi. Mobil/desktop 2/2: prefill, id havolasi, initial cancel focus, Escape/cancel focus qaytishi va 0 DELETE, overflow yo‘q. Testdagi bir xil nomli nav/detail link strict locator xatosi main bilan scope qilinib tuzatildi. Lint/typecheck o‘tdi.
