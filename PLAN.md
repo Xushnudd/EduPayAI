@@ -358,7 +358,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: 201, aniq Decimal va sana; yo‘q o‘quvchi 404; FK race boshqariladi; mutatsiya GET’da bajarilmaydi.
   - Tekshirish: HTTP orqali valid, invalid va yo‘q o‘quvchili to‘lovlar.
 
-- [ ] TASK-014 — O‘quvchining barcha to‘lovlari
+- [x] TASK-014 — O‘quvchining barcha to‘lovlari
   - Tavsif: GET `/api/students/:id/payments`, sana bo‘yicha barqaror tartib.
   - Bog‘liq: TASK-013.
   - Fayllar: `src/services/payments.ts`, `src/app/api/students/[id]/payments/route.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 14 |
-| Qolgan | 32 |
-| Bajarilish foizi | 30.4% |
-| Hozirgi bosqich | TASK-013 tekshirildi |
+| Bajarilgan | 15 |
+| Qolgan | 31 |
+| Bajarilish foizi | 32.6% |
+| Hozirgi bosqich | TASK-014 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

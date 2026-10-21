@@ -78,3 +78,7 @@ Taxminan 1 daqiqa. Test student uchun payment yaratildi; HTTP DELETE 204, DB pay
 ### TASK-013 — 2026-10-21T10:39:14+00:00
 
 Taxminan 1 daqiqa. HTTP payment 201, amount 0.10/date 2024-02-29 aniq; invalid amount 400; missing student 404.
+
+### TASK-014 — 2026-10-21T10:39:32+00:00
+
+Taxminan 1 daqiqa. Ikki oydagi to‘lovlar sana tartibida qaytdi, studentId isolation, bo‘sh tarix 200 [], missing student 404 HTTP tekshirildi.
