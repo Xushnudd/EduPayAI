@@ -26,3 +26,7 @@ Vaqt: ish sessiyasining kuzatilgan wall-clock oralig‘i, kutish/o‘rnatish bil
 ### TASK-002 — 2026-10-21T10:33:09+00:00
 
 Jurnal tekshirildi: boshlanish vaqti, wall-clock hisoblash qoidasi, AI/inson hissasi, haqiqiy xatolar va tekshiruv natijalari bor. TASK-001 vaqt oralig‘iga qo‘shilgan boshlang‘ich yozuvlar takror hisoblanmaydi; ushbu tekshiruv taxminan 1 daqiqa.
+
+### TASK-003 — 2026-10-21T10:33:39+00:00
+
+Taxminan 1 daqiqa. Env valid/yo‘q/noto‘g‘ri URL uchun 3 assertion o‘tdi; .env va .env.local git ignore bilan himoyalangan. Maxfiy qiymatlar browserga uzatilmagan.

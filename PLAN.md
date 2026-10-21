@@ -275,7 +275,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: dastlabki haqiqiy yozuv mavjud; vaqtni hisoblash qoidasi belgilangan, oldindan xato yoki mustaqil yozilgan kod haqida da’vo yo‘q.
   - Tekshirish: jurnalni amaldagi ish bilan solishtirish; keyingi har bosqich yakunida yangilash.
 
-- [ ] TASK-003 — Environment shartnomasi
+- [x] TASK-003 — Environment shartnomasi
   - Tavsif: app va test DB sozlamalarini ajratish, serverda kerakli sozlamalarni tekshirish.
   - Bog‘liq: TASK-001.
   - Fayllar: `.env.example`, `src/lib/env.ts`, `.gitignore`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 2 |
-| Qolgan | 44 |
-| Bajarilish foizi | 4.3% |
-| Hozirgi bosqich | TASK-002 tekshirildi |
+| Bajarilgan | 3 |
+| Qolgan | 43 |
+| Bajarilish foizi | 6.5% |
+| Hozirgi bosqich | TASK-003 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
