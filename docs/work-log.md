@@ -46,3 +46,7 @@ Taxminan 1 daqiqa. Real PostgreSQL 18: migrate deploy o‘tdi, qayta deploy no p
 ### TASK-006 — 2026-10-21T10:36:01+00:00
 
 Taxminan 1 daqiqa. Lazy server-only singleton yaratildi; typecheck o‘tdi; singleton identity va real SELECT 1 [{ok:1}] tekshirildi. Build paytida DB talab qilinmaydi.
+
+### TASK-007 — 2026-10-21T10:36:31+00:00
+
+Taxminan 1 daqiqa. Seed ikki marta exit 0; real DB count 3 student va 2 payment, dublikat yo‘q. 2026-10 demo oyi aniq; begona yozuvlar o‘chirilmaydi.

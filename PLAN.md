@@ -307,7 +307,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: server DB’ni o‘qiydi, client bundle Prisma’ni import qilmaydi.
   - Tekshirish: ulanish smoke tekshiruvi va typecheck.
 
-- [ ] TASK-007 — Demo seed
+- [x] TASK-007 — Demo seed
   - Tavsif: Ali, Vali, Sardor misolini bitta hujjatlashtirilgan oyga yaratish; qayta seed dublikat qo‘shmasin.
   - Bog‘liq: TASK-006.
   - Fayllar: `prisma/seed.ts`, `package.json`, kerak bo‘lsa `prisma.config.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 7 |
-| Qolgan | 39 |
-| Bajarilish foizi | 15.2% |
-| Hozirgi bosqich | TASK-006 tekshirildi |
+| Bajarilgan | 8 |
+| Qolgan | 38 |
+| Bajarilish foizi | 17.4% |
+| Hozirgi bosqich | TASK-007 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
