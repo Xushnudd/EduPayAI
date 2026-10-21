@@ -22,6 +22,7 @@ COPY --from=builder --chown=node:node /app/prisma ./prisma
 COPY --from=builder --chown=node:node /app/prisma.config.ts ./prisma.config.ts
 COPY --from=builder --chown=node:node /app/src/lib/env.ts ./src/lib/env.ts
 RUN npm prune --omit=dev && chown -R node:node /app
+COPY --chown=node:node docker ./docker
 USER node
 EXPOSE 3000
-CMD ["node", "node_modules/next/dist/bin/next", "start", "--hostname", "0.0.0.0"]
+ENTRYPOINT ["sh", "/app/docker/entrypoint.sh"]

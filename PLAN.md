@@ -565,7 +565,7 @@ Mavjud TASK-001–038 saqlanadi. Yangi ID’lar bajarilish vaqti emas; haqiqiy t
   - Mezon: DB’siz build o‘tadi; migration/schema/config va CLI runner’da bor; startup paket yuklamaydi; Node.js va Prisma versiyalari mos; secret build qatlamida yo‘q.
   - Tekshirish: image build, runtime fayl/CLI va user tekshiruvi, build context va image metadata’ni maxfiy ma’lumotni oshkor qilmasdan ko‘rish.
 
-- [ ] TASK-041 — App ichidagi avtomatik migratsiya startup’i
+- [x] TASK-041 — App ichidagi avtomatik migratsiya startup’i
   - Tavsif: chegaralangan DB kutish, deploy migratsiya va muvaffaqiyatdan keyin serverni exec qilish oqimini yaratish.
   - Bog‘liq: TASK-005, TASK-040.
   - Fayllar: `docker/entrypoint.sh`, `docker/wait-for-db.mjs`, `Dockerfile`, zarur bo‘lsa `package.json`.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 20 |
-| Qolgan | 26 |
-| Bajarilish foizi | 43.5% |
-| Hozirgi bosqich | TASK-040 tekshirildi |
-| Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
+| Bajarilgan | 21 |
+| Qolgan | 25 |
+| Bajarilish foizi | 45.7% |
+| Hozirgi bosqich | TASK-041 tekshirildi |
+| Keyingi vazifa | TASK-042 — Ikki servisli Compose |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 

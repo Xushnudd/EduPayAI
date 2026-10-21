@@ -11,3 +11,5 @@ playwright-report/
 *.log
 *.dump
 *.sql.gz
+
+__pycache__/
