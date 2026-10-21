@@ -90,3 +90,7 @@ Taxminan 1 daqiqa. Decimal 40-digit hisoblash: 0.10+0.20=0.30, partial debt, ove
 ### TASK-016 — 2026-10-21T10:40:19+00:00
 
 Taxminan 1 daqiqa. Kabisa oyi, dekabr-yanvar, 0001 yil, 9999-12 va Toshkent oy almashishi bo‘yicha 5 assertion o‘tdi.
+
+### TASK-017 — 2026-10-21T10:40:39+00:00
+
+Taxminan 1 daqiqa. Real PostgreSQL: Ali 200000, Sardor 450000, Vali yo‘q; qo‘shni oy Ali 500000. Ikki bulk query, RepeatableRead, Decimal birlashtirish.

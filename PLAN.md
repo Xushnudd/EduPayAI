@@ -381,7 +381,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: kabisa, dekabr–yanvar, 9999-12 va timezone chegaralari to‘g‘ri; 2026-02-30 rad etiladi.
   - Tekshirish: chegara sanalar, belgilangan clock va turli process timezone’lari bilan natijani solishtirish.
 
-- [ ] TASK-017 — Qarzdorlik service’i
+- [x] TASK-017 — Qarzdorlik service’i
   - Tavsif: o‘quvchilar va oylik agregatsiyani izchil snapshot’da olish, Decimal bilan qarzni hisoblash.
   - Bog‘liq: TASK-014, TASK-015, TASK-016.
   - Fayllar: `src/services/debtors.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 17 |
-| Qolgan | 29 |
-| Bajarilish foizi | 37.0% |
-| Hozirgi bosqich | TASK-016 tekshirildi |
+| Bajarilgan | 18 |
+| Qolgan | 28 |
+| Bajarilish foizi | 39.1% |
+| Hozirgi bosqich | TASK-017 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
