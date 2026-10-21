@@ -323,7 +323,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: 400/404/409/500/503 javoblari bir xil formatda; maxfiy ma’lumot oshkor qilinmaydi; 204 tanasiz.
   - Tekshirish: javob namunalarini va serializatsiyani tekshirish.
 
-- [ ] TASK-009 — Kirish validatsiyasi sxemalari
+- [x] TASK-009 — Kirish validatsiyasi sxemalari
   - Tavsif: student, PATCH, payment, UUID va month/sana validatsiyasini umumiy modulda belgilash.
   - Bog‘liq: TASK-008.
   - Fayllar: `src/lib/validation.ts`, `package.json`, `package-lock.json`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 9 |
-| Qolgan | 37 |
-| Bajarilish foizi | 19.6% |
-| Hozirgi bosqich | TASK-008 tekshirildi |
+| Bajarilgan | 10 |
+| Qolgan | 36 |
+| Bajarilish foizi | 21.7% |
+| Hozirgi bosqich | TASK-009 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

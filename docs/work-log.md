@@ -54,3 +54,7 @@ Taxminan 1 daqiqa. Seed ikki marta exit 0; real DB count 3 student va 2 payment,
 ### TASK-008 — 2026-10-21T10:37:02+00:00
 
 Taxminan 2 daqiqa. 7 API helper assertion o‘tdi: statuslar, envelope, invalid JSON. tsx CLI sandbox IPC xatosi node --import tsx orqali tuzatildi; DB kerak bo‘lmagan tekshiruv sandbox ichida o‘tdi.
+
+### TASK-009 — 2026-10-21T10:37:04+00:00
+
+Taxminan 1 daqiqa. Zod strict sxemalar: 14 assertion o‘tdi, jumladan summa chegaralari, kabisa, oy, telefon normallashuvi va bo‘sh PATCH.
