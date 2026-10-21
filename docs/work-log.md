@@ -50,3 +50,7 @@ Taxminan 1 daqiqa. Lazy server-only singleton yaratildi; typecheck o‘tdi; sing
 ### TASK-007 — 2026-10-21T10:36:31+00:00
 
 Taxminan 1 daqiqa. Seed ikki marta exit 0; real DB count 3 student va 2 payment, dublikat yo‘q. 2026-10 demo oyi aniq; begona yozuvlar o‘chirilmaydi.
+
+### TASK-008 — 2026-10-21T10:37:02+00:00
+
+Taxminan 2 daqiqa. 7 API helper assertion o‘tdi: statuslar, envelope, invalid JSON. tsx CLI sandbox IPC xatosi node --import tsx orqali tuzatildi; DB kerak bo‘lmagan tekshiruv sandbox ichida o‘tdi.

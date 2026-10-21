@@ -316,7 +316,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 4. Backend API
 
-- [ ] TASK-008 — Umumiy API javoblari va xatolari
+- [x] TASK-008 — Umumiy API javoblari va xatolari
   - Tavsif: JSON envelope, Decimal/date serializatsiyasi va xavfsiz xato xaritalashni tayyorlash.
   - Bog‘liq: TASK-006.
   - Fayllar: `src/lib/api-response.ts`, `src/lib/errors.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 8 |
-| Qolgan | 38 |
-| Bajarilish foizi | 17.4% |
-| Hozirgi bosqich | TASK-007 tekshirildi |
+| Bajarilgan | 9 |
+| Qolgan | 37 |
+| Bajarilish foizi | 19.6% |
+| Hozirgi bosqich | TASK-008 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
