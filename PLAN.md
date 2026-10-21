@@ -551,7 +551,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 Mavjud TASK-001–038 saqlanadi. Yangi ID’lar bajarilish vaqti emas; haqiqiy tartib F bo‘limda.
 
-- [ ] TASK-039 — Konteyner va lokal environment shartnomasi
+- [x] TASK-039 — Konteyner va lokal environment shartnomasi
   - Tavsif: B bo‘limdagi ikki URL rejimi, PostgreSQL env qiymatlari va maxfiy fayllar qoidalarini joriy qilish.
   - Bog‘liq: TASK-003.
   - Fayllar: `.env.example`, `.gitignore`, `src/lib/env.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 3 |
-| Qolgan | 43 |
-| Bajarilish foizi | 6.5% |
-| Hozirgi bosqich | TASK-003 tekshirildi |
+| Bajarilgan | 4 |
+| Qolgan | 42 |
+| Bajarilish foizi | 8.7% |
+| Hozirgi bosqich | TASK-039 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

@@ -30,3 +30,7 @@ Jurnal tekshirildi: boshlanish vaqti, wall-clock hisoblash qoidasi, AI/inson his
 ### TASK-003 — 2026-10-21T10:33:39+00:00
 
 Taxminan 1 daqiqa. Env valid/yo‘q/noto‘g‘ri URL uchun 3 assertion o‘tdi; .env va .env.local git ignore bilan himoyalangan. Maxfiy qiymatlar browserga uzatilmagan.
+
+### TASK-039 — 2026-10-21T10:33:41+00:00
+
+Taxminan 1 daqiqa. Namunada lokal localhost va Compose db URL ajratildi, POSTGRES qiymatlari mos; secret yo‘q; NEXT_PUBLIC URL yo‘qligi assertion bilan tekshirildi.
