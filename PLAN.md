@@ -291,7 +291,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: 1:N bog‘lanish, Cascade, Decimal(14,2), date va indekslar sxemaga mos.
   - Tekshirish: Prisma format va validate buyruqlari.
 
-- [ ] TASK-005 — Dastlabki migratsiya
+- [x] TASK-005 — Dastlabki migratsiya
   - Tavsif: sxemani migratsiyaga aylantirish, musbat summalar CHECK’larini qo‘shish.
   - Bog‘liq: TASK-004.
   - Fayllar: `prisma/migrations/`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 5 |
-| Qolgan | 41 |
-| Bajarilish foizi | 10.9% |
-| Hozirgi bosqich | TASK-004 tekshirildi |
+| Bajarilgan | 6 |
+| Qolgan | 40 |
+| Bajarilish foizi | 13.0% |
+| Hozirgi bosqich | TASK-005 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

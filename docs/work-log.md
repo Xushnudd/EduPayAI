@@ -38,3 +38,7 @@ Taxminan 1 daqiqa. Namunada lokal localhost va Compose db URL ajratildi, POSTGRE
 ### TASK-004 — 2026-10-21T10:35:01+00:00
 
 Taxminan 2 daqiqa. Prisma 7.10.1 client/adapter bilan pinlandi. Student/Payment, Decimal/date, Cascade va indekslar yaratildi. prisma format va validate exit 0. Prisma 7 rasmiy hujjatiga mos pg adapter va ESM tanlandi: https://www.prisma.io/docs/orm/v7 .
+
+### TASK-005 — 2026-10-21T10:35:35+00:00
+
+Taxminan 1 daqiqa. Real PostgreSQL 18: migrate deploy o‘tdi, qayta deploy no pending; zero fee CHECK va orphan Payment FK rad etildi, indekslar psql orqali tekshirildi.
