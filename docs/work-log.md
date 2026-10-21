@@ -42,3 +42,7 @@ Taxminan 2 daqiqa. Prisma 7.10.1 client/adapter bilan pinlandi. Student/Payment,
 ### TASK-005 — 2026-10-21T10:35:35+00:00
 
 Taxminan 1 daqiqa. Real PostgreSQL 18: migrate deploy o‘tdi, qayta deploy no pending; zero fee CHECK va orphan Payment FK rad etildi, indekslar psql orqali tekshirildi.
+
+### TASK-006 — 2026-10-21T10:36:01+00:00
+
+Taxminan 1 daqiqa. Lazy server-only singleton yaratildi; typecheck o‘tdi; singleton identity va real SELECT 1 [{ok:1}] tekshirildi. Build paytida DB talab qilinmaydi.

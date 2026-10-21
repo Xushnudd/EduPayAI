@@ -300,7 +300,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 3. Prisma Integration
 
-- [ ] TASK-006 — Server Prisma client
+- [x] TASK-006 — Server Prisma client
   - Tavsif: development hot reload’da ulanishlar ko‘paymasligi uchun yagona client yaratish, server-only chegarani belgilash.
   - Bog‘liq: TASK-005.
   - Fayllar: `src/lib/prisma.ts`, kerak bo‘lsa `package.json`, `package-lock.json`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 6 |
-| Qolgan | 40 |
-| Bajarilish foizi | 13.0% |
-| Hozirgi bosqich | TASK-005 tekshirildi |
+| Bajarilgan | 7 |
+| Qolgan | 39 |
+| Bajarilish foizi | 15.2% |
+| Hozirgi bosqich | TASK-006 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
