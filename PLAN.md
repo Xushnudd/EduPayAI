@@ -374,7 +374,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: 0.10 + 0.20 = 0.30; manfiy qarz qarzdor sifatida olinmaydi; yig‘indi ustun maksimumidan oshsa ham hisoblash buzilmaydi.
   - Tekshirish: kasr, maksimum va ko‘p to‘lov yig‘indisi misollari.
 
-- [ ] TASK-016 — Sana va oy chegaralari
+- [x] TASK-016 — Sana va oy chegaralari
   - Tavsif: qat’iy kalendar parsing, oy diapazoni va Toshkent bo‘yicha joriy oy/kun standartlarini tayyorlash.
   - Bog‘liq: TASK-009.
   - Fayllar: `src/lib/dates.ts`, `src/lib/validation.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 16 |
-| Qolgan | 30 |
-| Bajarilish foizi | 34.8% |
-| Hozirgi bosqich | TASK-015 tekshirildi |
+| Bajarilgan | 17 |
+| Qolgan | 29 |
+| Bajarilish foizi | 37.0% |
+| Hozirgi bosqich | TASK-016 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

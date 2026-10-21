@@ -86,3 +86,7 @@ Taxminan 1 daqiqa. Ikki oydagi to‘lovlar sana tartibida qaytdi, studentId isol
 ### TASK-015 — 2026-10-21T10:39:53+00:00
 
 Taxminan 1 daqiqa. Decimal 40-digit hisoblash: 0.10+0.20=0.30, partial debt, overpayment va ustun limitidan katta agregatsiya bo‘yicha 4 assertion o‘tdi.
+
+### TASK-016 — 2026-10-21T10:40:19+00:00
+
+Taxminan 1 daqiqa. Kabisa oyi, dekabr-yanvar, 0001 yil, 9999-12 va Toshkent oy almashishi bo‘yicha 5 assertion o‘tdi.
