@@ -268,7 +268,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: boshlang‘ich sahifa ochiladi, lockfile mavjud, `.env` va build fayllari ignore qilinadi, `TASK.md` saqlanadi.
   - Tekshirish: dev sahifani ochish; lint va typecheck.
 
-- [ ] TASK-002 — Haqiqiy ish va AI foydalanish jurnalini boshlash
+- [x] TASK-002 — Haqiqiy ish va AI foydalanish jurnalini boshlash
   - Tavsif: vaqt, ishlatilgan vosita/prompt, natija, aniqlangan xato/tuzatish va inson/AI hissasi uchun jurnal ochish; keyingi ish davomida to‘ldirish.
   - Bog‘liq: TASK-001.
   - Fayllar: `docs/work-log.md`.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 1 |
-| Qolgan | 45 |
-| Bajarilish foizi | 2.2% |
-| Hozirgi bosqich | Project Setup — TASK-001 tekshirildi |
-| Keyingi vazifa | TASK-002 |
+| Bajarilgan | 2 |
+| Qolgan | 44 |
+| Bajarilish foizi | 4.3% |
+| Hozirgi bosqich | TASK-002 tekshirildi |
+| Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 

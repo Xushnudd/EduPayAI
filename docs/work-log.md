@@ -22,3 +22,7 @@ Vaqt: ish sessiyasining kuzatilgan wall-clock oralig‘i, kutish/o‘rnatish bil
 - PostCSS anonim default export lint warning’i nomlangan config bilan tuzatildi. Sandbox listen EPERM bo‘ldi; ruxsatli lokal server orqali HTTP tekshirildi.
 - npm audit: 5 high yozuv bitta braces transitive development/lint zanjiriga tegishli; runtime o‘rnatishda 0 zaiflik qayd etilgan. Force downgrade qilinmadi; keyingi final auditda qayta tekshiriladi.
 - TASK-001 yakunlandi; Next.js yaratgan AGENTS.md loyiha bilan saqlanadi.
+
+### TASK-002 — 2026-10-21T10:33:09+00:00
+
+Jurnal tekshirildi: boshlanish vaqti, wall-clock hisoblash qoidasi, AI/inson hissasi, haqiqiy xatolar va tekshiruv natijalari bor. TASK-001 vaqt oralig‘iga qo‘shilgan boshlang‘ich yozuvlar takror hisoblanmaydi; ushbu tekshiruv taxminan 1 daqiqa.
