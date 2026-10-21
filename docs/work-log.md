@@ -62,3 +62,7 @@ Taxminan 1 daqiqa. Zod strict sxemalar: 14 assertion o‘tdi, jumladan summa che
 ### TASK-010 — 2026-10-21T10:37:52+00:00
 
 Taxminan 1 daqiqa. Real HTTP POST 201, GET 200, invalid POST 400; Decimal 100.10 aynan saqlandi.
+
+### TASK-011 — 2026-10-21T10:37:57+00:00
+
+Taxminan 1 daqiqa. HTTP GET/PATCH 200; maydonlar saqlandi; empty PATCH va invalid UUID 400, missing UUID 404.
