@@ -330,7 +330,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: B bo‘limdagi format/chegaralar, noma’lum maydonlar va bo‘sh PATCH qoidalari bajariladi; maydon xatolari ajratiladi.
   - Tekshirish: to‘g‘ri/noto‘g‘ri payload namunalarini sxema orqali o‘tkazish.
 
-- [ ] TASK-010 — O‘quvchi yaratish va ro‘yxat
+- [x] TASK-010 — O‘quvchi yaratish va ro‘yxat
   - Tavsif: POST va GET `/api/students`ni service bilan yozish.
   - Bog‘liq: TASK-009.
   - Fayllar: `src/services/students.ts`, `src/app/api/students/route.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 10 |
-| Qolgan | 36 |
-| Bajarilish foizi | 21.7% |
-| Hozirgi bosqich | TASK-009 tekshirildi |
+| Bajarilgan | 11 |
+| Qolgan | 35 |
+| Bajarilish foizi | 23.9% |
+| Hozirgi bosqich | TASK-010 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

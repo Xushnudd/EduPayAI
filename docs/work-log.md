@@ -58,3 +58,7 @@ Taxminan 2 daqiqa. 7 API helper assertion o‘tdi: statuslar, envelope, invalid 
 ### TASK-009 — 2026-10-21T10:37:04+00:00
 
 Taxminan 1 daqiqa. Zod strict sxemalar: 14 assertion o‘tdi, jumladan summa chegaralari, kabisa, oy, telefon normallashuvi va bo‘sh PATCH.
+
+### TASK-010 — 2026-10-21T10:37:52+00:00
+
+Taxminan 1 daqiqa. Real HTTP POST 201, GET 200, invalid POST 400; Decimal 100.10 aynan saqlandi.
