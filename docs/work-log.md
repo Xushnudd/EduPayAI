@@ -34,3 +34,7 @@ Taxminan 1 daqiqa. Env valid/yo‘q/noto‘g‘ri URL uchun 3 assertion o‘tdi;
 ### TASK-039 — 2026-10-21T10:33:41+00:00
 
 Taxminan 1 daqiqa. Namunada lokal localhost va Compose db URL ajratildi, POSTGRES qiymatlari mos; secret yo‘q; NEXT_PUBLIC URL yo‘qligi assertion bilan tekshirildi.
+
+### TASK-004 — 2026-10-21T10:35:01+00:00
+
+Taxminan 2 daqiqa. Prisma 7.10.1 client/adapter bilan pinlandi. Student/Payment, Decimal/date, Cascade va indekslar yaratildi. prisma format va validate exit 0. Prisma 7 rasmiy hujjatiga mos pg adapter va ESM tanlandi: https://www.prisma.io/docs/orm/v7 .

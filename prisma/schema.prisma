@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Student {
+  id         String    @id @default(uuid()) @db.Uuid
+  name       String    @db.VarChar(100)
+  phone      String    @db.VarChar(20)
+  groupName  String    @db.VarChar(100)
+  monthlyFee Decimal   @db.Decimal(14, 2)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  payments   Payment[]
+}
+
+model Payment {
+  id        String   @id @default(uuid()) @db.Uuid
+  studentId String   @db.Uuid
+  amount    Decimal  @db.Decimal(14, 2)
+  paidOn    DateTime @db.Date
+  createdAt DateTime @default(now())
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([studentId, paidOn])
+  @@index([paidOn])
+}
