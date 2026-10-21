@@ -1,2 +1,28 @@
 @import "tailwindcss";
-body { background: #f5f7fb; color: #17243c; font-family: Arial, Helvetica, sans-serif; }
+:root { color-scheme: light; --ink:#17243c; --muted:#55657b; --line:#dce4ed; --primary:#087b70; }
+* { box-sizing:border-box; }
+body { margin:0; background:#f5f7fb; color:var(--ink); font-family:Arial,Helvetica,sans-serif; line-height:1.5; }
+a,button,input,select { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid #147eec; outline-offset:3px; }
+.app-header { background:white; border-bottom:1px solid var(--line); }
+.header-inner { max-width:1120px; margin:auto; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.brand { display:flex; align-items:center; gap:10px; font-size:23px; font-weight:800; text-decoration:none; }
+.brand-mark { display:grid; place-items:center; width:36px; height:36px; border-radius:10px; background:var(--primary); color:white; }
+nav { display:flex; flex-wrap:wrap; gap:8px; } nav a { padding:10px 14px; border-radius:8px; color:var(--muted); font-weight:600; text-decoration:none; font-size:14px; }
+nav a[aria-current=page] { background:#e3f3ef; color:#056359; } nav a:hover { background:#edf3f7; }
+.page-container { max-width:1120px; margin:auto; padding:36px 24px; min-height:75vh; }
+.page-footer { max-width:1120px; margin:auto; padding:20px 24px; color:var(--muted); font-size:13px; }
+h1 { font-size:clamp(26px,4vw,34px); font-weight:750; letter-spacing:-.7px; margin:0 0 8px; } h2 { font-size:20px; font-weight:700; margin:0 0 20px; }
+.subtitle { color:var(--muted); margin-bottom:28px; }.panel { padding:24px; background:white; border:1px solid var(--line); border-radius:14px; min-width:0; }
+.two-column { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:24px; align-items:start; }
+.field { display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }.field label { font-size:14px; font-weight:600; }
+input,select { width:100%; min-width:0; min-height:44px; border:1px solid #abb9c9; border-radius:8px; padding:10px 12px; color:var(--ink); background:white; font-size:16px; }
+input[aria-invalid=true],select[aria-invalid=true] { border-color:#bb3030; }.field-error { font-size:13px; color:#a52b2b; }
+.button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; border-radius:8px; border:1px solid transparent; padding:10px 18px; background:var(--primary); color:white; font-weight:600; cursor:pointer; text-decoration:none; }
+.button:disabled { opacity:.55; cursor:not-allowed; }.button.secondary { background:white; color:var(--ink); border-color:#abb9c9; }.button.danger { background:#b63039; }.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+.ui-state { padding:24px; border:1px dashed var(--line); border-radius:10px; text-align:center; color:var(--muted); }.ui-state.error { color:#a52b2b; background:#fff5f5; }.ui-state button { margin-top:12px; }
+.note { padding:12px; border-radius:8px; background:#fff8e8; color:#73511e; font-size:14px; margin:16px 0; }.success { color:#056359; padding:12px 0; }
+.student-list { display:grid; gap:12px; }.student-card { display:block; border:1px solid var(--line); border-radius:10px; padding:16px; text-decoration:none; overflow-wrap:anywhere; }.student-card:hover { border-color:var(--primary); }.student-card strong { display:block; }.student-card p { color:var(--muted); margin-top:4px; }.money { font-variant-numeric:tabular-nums; font-weight:600; }
+dialog { width:min(440px,calc(100% - 32px)); margin:auto; padding:24px; border:1px solid var(--line); border-radius:14px; } dialog::backdrop { background:#15203780; }
+.skip-link { position:absolute; top:-100px; left:12px; padding:12px; background:white; z-index:10; }.skip-link:focus { top:8px; }
+@media(max-width:640px) { .header-inner { padding:16px; align-items:flex-start; flex-direction:column; gap:14px; } nav { width:100%; gap:4px; } nav a { padding:9px 10px; font-size:13px; } .page-container { padding:24px 16px; } .two-column { grid-template-columns:1fr; }.panel { padding:18px; }.page-footer { padding:16px; } }

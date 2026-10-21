@@ -110,3 +110,7 @@ Davom sessiyasi 20:23–20:27 Asia/Tashkent, taxminan 4 daqiqa (oldingi sessiya 
 ### TASK-042 — 2026-10-21T15:30:53+00:00
 
 Taxminan 1 daqiqa. Compose JSON konfiguratsiyasi validatsiyadan o‘tdi: faqat app/db, app loopback:3000, db portisiz, db DNS URL, PostgreSQL 18 /var/lib/postgresql named volume, healthcheck va service_healthy. Secret qiymatlar chiqarilmadi. Bu konfiguratsiya tekshiruvi; umumiy Compose runtime sinovi TASK-043’da qoladi.
+
+### TASK-019 — 2026-10-21T15:33:32+00:00
+
+Taxminan 3 daqiqa (Chromium o‘rnatish bilan). Mobil 360x800 va desktop 1280x800 Playwright 2/2: navigation, overflow yo‘qligi, skip-link va keyboard focus. Lint/typecheck o‘tdi. Dev server mavjudligi aniqlandi, yangi process to‘xtadi va mavjud server qayta ishlatildi. Chromium OS fallback ogohlantirdi, ammo ikkala browser test o‘tdi.

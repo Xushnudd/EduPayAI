@@ -397,7 +397,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 6. Frontend UI
 
-- [ ] TASK-019 — Mobil layout va umumiy holatlar
+- [x] TASK-019 — Mobil layout va umumiy holatlar
   - Tavsif: navigatsiya, asosiy konteyner, yuklanish/bo‘sh/xato komponentlarini yaratish.
   - Bog‘liq: TASK-001.
   - Fayllar: `src/app/layout.tsx`, `src/app/globals.css`, `src/components/app-shell.tsx`, `src/components/ui-state.tsx`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 22 |
-| Qolgan | 24 |
-| Bajarilish foizi | 47.8% |
-| Hozirgi bosqich | TASK-042 tekshirildi |
+| Bajarilgan | 23 |
+| Qolgan | 23 |
+| Bajarilish foizi | 50.0% |
+| Hozirgi bosqich | TASK-019 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
