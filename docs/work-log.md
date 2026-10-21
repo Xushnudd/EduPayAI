@@ -82,3 +82,7 @@ Taxminan 1 daqiqa. HTTP payment 201, amount 0.10/date 2024-02-29 aniq; invalid a
 ### TASK-014 — 2026-10-21T10:39:32+00:00
 
 Taxminan 1 daqiqa. Ikki oydagi to‘lovlar sana tartibida qaytdi, studentId isolation, bo‘sh tarix 200 [], missing student 404 HTTP tekshirildi.
+
+### TASK-015 — 2026-10-21T10:39:53+00:00
+
+Taxminan 1 daqiqa. Decimal 40-digit hisoblash: 0.10+0.20=0.30, partial debt, overpayment va ustun limitidan katta agregatsiya bo‘yicha 4 assertion o‘tdi.

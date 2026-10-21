@@ -367,7 +367,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 5. Business Logic
 
-- [ ] TASK-015 — Pul hisoblash yordamchilari
+- [x] TASK-015 — Pul hisoblash yordamchilari
   - Tavsif: Decimal summalash/ayirish va ikki xonali API satriga aylantirishni markazlashtirish.
   - Bog‘liq: TASK-009.
   - Fayllar: `src/lib/money.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 15 |
-| Qolgan | 31 |
-| Bajarilish foizi | 32.6% |
-| Hozirgi bosqich | TASK-014 tekshirildi |
+| Bajarilgan | 16 |
+| Qolgan | 30 |
+| Bajarilish foizi | 34.8% |
+| Hozirgi bosqich | TASK-015 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
