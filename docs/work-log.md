@@ -1,0 +1,24 @@
+# EduPay — haqiqiy ish jurnali
+
+## Hisoblash qoidasi
+
+Vaqt: ish sessiyasining kuzatilgan wall-clock oralig‘i, kutish/o‘rnatish bilan birga; parallel amallar ikki marta qo‘shilmaydi. Avvalgi rejalashtirish vaqtiga aniq o‘lchov yo‘q, shu sabab umumiy implementatsiya vaqtiga qo‘shilmaydi. Foydalanuvchi talab va tasdiq berdi; ushbu sessiyadagi kodni Codex yaratmoqda. Inson tomonidan kod tahriri hozircha kuzatilmadi.
+
+## 2026-10-21 — TASK-001, boshlandi
+
+- Sessiya boshi: taxminan 15:28 Asia/Tashkent (10:28 UTC).
+- TASK.md va PLAN.md o‘qildi; Git boshlang‘ich commit: c395dda.
+- Muhitda Node.js/npm topilmadi. Node.js 22.23.3 /tmp’ga yuklandi; SHA-256 rasmiy checksum bilan mos.
+- Sandbox DNS va Podman runtime yozuviga ruxsat bermadi; escalation orqali yuklash va Podman read-only info muvaffaqiyatli bajarildi. Birinchi Podman approval ko‘rib chiqilishi timeout bo‘ldi, bitta qayta urinish o‘tdi.
+- Docker CLI va host PostgreSQL topilmadi; Podman rootless mavjud, Compose provider /usr/local/bin/docker-compose v5.6.0.
+- Next.js 16.4.2, React, TypeScript strict va Tailwind boshlang‘ich fayllari yaratildi; o‘rnatish/tekshiruv davom etmoqda.
+- Samarali prompt: foydalanuvchining har vazifani tekshirish, jurnal, progress va alohida commit bilan bajarish ko‘rsatmasi ish oqimini aniq belgiladi.
+- Holat: TASK-001 hali tugamagan; test natijasi hali yo‘q.
+
+### TASK-001 natijasi
+
+- 15:28–15:34 Asia/Tashkent, taxminan 6 daqiqa (muhit tayyorlash bilan).
+- `npm run lint` va `npm run typecheck`: exit 0; GET / HTTP 200, EduPay matni tekshirildi.
+- PostCSS anonim default export lint warning’i nomlangan config bilan tuzatildi. Sandbox listen EPERM bo‘ldi; ruxsatli lokal server orqali HTTP tekshirildi.
+- npm audit: 5 high yozuv bitta braces transitive development/lint zanjiriga tegishli; runtime o‘rnatishda 0 zaiflik qayd etilgan. Force downgrade qilinmadi; keyingi final auditda qayta tekshiriladi.
+- TASK-001 yakunlandi; Next.js yaratgan AGENTS.md loyiha bilan saqlanadi.

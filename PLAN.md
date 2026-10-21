@@ -1,6 +1,6 @@
 # EduPay — amalga oshirish rejasi
 
-> Holat: rejalashtirish tugallangan, amalga oshirish boshlanmagan. Asosiy talablar manbasi — `TASK.md`; u o‘zgartirilmaydi. Konteynerlashtirish talablari foydalanuvchining qo‘shimcha ko‘rsatmasidan olingan. Ushbu reja tasdiqlanmaguncha paket o‘rnatish, kod yozish, migratsiya yaratish yoki dasturni ishga tushirish boshlanmaydi.
+> Holat: foydalanuvchi tasdig‘i olindi; implementatsiya boshlandi. Asosiy talablar manbasi — `TASK.md`; u o‘zgartirilmaydi. Konteynerlashtirish talablari foydalanuvchining qo‘shimcha ko‘rsatmasidan olingan. Implementatsiya, lokal testlar va kichik commitlar tasdiqlangan; GitHub push va Telegram yuborish alohida ruxsat talab qiladi.
 
 ## A. Loyiha haqida
 
@@ -261,7 +261,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 1. Project Setup
 
-- [ ] TASK-001 — Next.js asosini tayyorlash
+- [x] TASK-001 — Next.js asosini tayyorlash
   - Tavsif: App Router, TypeScript strict, Tailwind va npm bilan bitta loyiha yaratish; mos versiyalar va lint/typecheck skriptlarini belgilash.
   - Bog‘liq: rejaning foydalanuvchi tomonidan tasdiqlanishi.
   - Fayllar: `package.json`, `package-lock.json`, `tsconfig.json`, Next.js/lint/Tailwind konfiguratsiyalari, `src/app/layout.tsx`, `src/app/page.tsx`, `src/app/globals.css`, `.gitignore`.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 0 |
-| Qolgan | 46 |
-| Bajarilish foizi | 0% |
-| Hozirgi bosqich | Reja tayyor; foydalanuvchi tasdig‘i kutilmoqda |
-| Keyingi vazifa | Tasdiqdan keyin TASK-001 |
+| Bajarilgan | 1 |
+| Qolgan | 45 |
+| Bajarilish foizi | 2.2% |
+| Hozirgi bosqich | Project Setup — TASK-001 tekshirildi |
+| Keyingi vazifa | TASK-002 |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 
@@ -698,4 +698,4 @@ Ish jurnali barcha kunlarda yuritiladi; 3-kuni faqat faktlar asosida yakunlanadi
 - O‘quvchini o‘chirishda uning to‘lov tarixini ham o‘chirish test loyihasi uchun maqbulmi?
 - Topshirish paytida GitHub repository/hisob va tekshiruvchi kirishi qanday ta’minlanadi; Telegram xabarini foydalanuvchi yuboradimi?
 
-Bu masalalar uchun ishchi taxminlar yuqorida berilgan. Hozir faqat reja yaratilgan; tasdiq kelmaguncha vazifalar bajarilmaydi.
+Bu masalalar uchun ishchi taxminlar yuqorida berilgan. Implementatsiyaga tasdiq olindi; yuqoridagi biznes taxminlari asosida ish davom etadi.
