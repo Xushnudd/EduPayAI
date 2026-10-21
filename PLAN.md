@@ -404,7 +404,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: 360 px va desktop’da navigatsiya ishlaydi, sahifa sig‘adi, klaviatura fokusi ko‘rinadi.
   - Tekshirish: responsive preview va klaviatura orqali yurish.
 
-- [ ] TASK-020 — O‘quvchilar ro‘yxati va yaratish formasi
+- [x] TASK-020 — O‘quvchilar ro‘yxati va yaratish formasi
   - Tavsif: to‘rtta maydonli forma, o‘quvchi ro‘yxati va tafsilot havolalarini qurish.
   - Bog‘liq: TASK-019, TASK-009.
   - Fayllar: `src/app/students/page.tsx`, `src/components/student-form.tsx`, `src/components/student-list.tsx`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 23 |
-| Qolgan | 23 |
-| Bajarilish foizi | 50.0% |
-| Hozirgi bosqich | TASK-019 tekshirildi |
+| Bajarilgan | 24 |
+| Qolgan | 22 |
+| Bajarilish foizi | 52.2% |
+| Hozirgi bosqich | TASK-020 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

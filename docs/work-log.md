@@ -114,3 +114,7 @@ Taxminan 1 daqiqa. Compose JSON konfiguratsiyasi validatsiyadan o‘tdi: faqat a
 ### TASK-019 — 2026-10-21T15:33:32+00:00
 
 Taxminan 3 daqiqa (Chromium o‘rnatish bilan). Mobil 360x800 va desktop 1280x800 Playwright 2/2: navigation, overflow yo‘qligi, skip-link va keyboard focus. Lint/typecheck o‘tdi. Dev server mavjudligi aniqlandi, yangi process to‘xtadi va mavjud server qayta ishlatildi. Chromium OS fallback ogohlantirdi, ammo ikkala browser test o‘tdi.
+
+### TASK-020 — 2026-10-21T15:35:12+00:00
+
+Taxminan 3 daqiqa. StudentForm, StudentList va sahifa yaratildi. Mobil/desktop 4/4 UI test: label, validation, link, empty state, overflow. Lint effect callback ogohlantirishi promise handler bilan tuzatildi; lint/typecheck va qayta browser testlar o‘tdi. Formani ishlatish uchun minimal UI request helper qo‘shildi; umumiy API integratsiya acceptance TASK-025 uchun ochiq, real DB UI oqimi bu vazifada da’vo qilinmaydi.
