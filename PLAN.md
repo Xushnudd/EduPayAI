@@ -344,7 +344,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: bitta maydonni o‘zgartirish boshqalarini buzmaydi; yo‘q id 404; noto‘g‘ri id 400.
   - Tekshirish: yaratish → qisman PATCH → GET; bo‘sh PATCH va yo‘q id.
 
-- [ ] TASK-012 — O‘quvchini o‘chirish
+- [x] TASK-012 — O‘quvchini o‘chirish
   - Tavsif: DELETE va bog‘liq to‘lovlarning atomar kaskad o‘chirilishini amalga oshirish.
   - Bog‘liq: TASK-011.
   - Fayllar: `src/services/students.ts`, `src/app/api/students/[id]/route.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 12 |
-| Qolgan | 34 |
-| Bajarilish foizi | 26.1% |
-| Hozirgi bosqich | TASK-011 tekshirildi |
+| Bajarilgan | 13 |
+| Qolgan | 33 |
+| Bajarilish foizi | 28.3% |
+| Hozirgi bosqich | TASK-012 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

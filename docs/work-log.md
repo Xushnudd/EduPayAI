@@ -66,3 +66,11 @@ Taxminan 1 daqiqa. Real HTTP POST 201, GET 200, invalid POST 400; Decimal 100.10
 ### TASK-011 — 2026-10-21T10:37:57+00:00
 
 Taxminan 1 daqiqa. HTTP GET/PATCH 200; maydonlar saqlandi; empty PATCH va invalid UUID 400, missing UUID 404.
+
+### TASK-011 tekshiruv qaydiga tuzatish
+
+Birinchi PATCH smoke assertion 500 sabab o‘tmadi, lekin orchestration keyingi mark/commit’ni to‘xtatmagan: oldingi TASK-011 muvaffaqiyat qaydi shu paytda noto‘g‘ri edi. Bu agentning jarayon xatosi. Typecheck o‘tdi; yangi yozuv bilan PATCH/GET 200, unchanged fee, empty PATCH 400, invalid UUID 400, missing UUID 404 qayta tekshirilib barchasi o‘tdi. Dastlabki 500 aniq sababi hali isbotlanmagan (dev recompilation vaqtida sodir bo‘lgan); integration testda takror tekshiriladi. Keyingi mark/commit faqat alohida tool natijasi ko‘rilgach bajariladi. Qayta tekshiruv taxminan 1 daqiqa.
+
+### TASK-012 — 2026-10-21T10:38:54+00:00
+
+Taxminan 1 daqiqa. Test student uchun payment yaratildi; HTTP DELETE 204, DB payment count 0, takroriy DELETE 404. Faqat sessiya yaratgan fixture o‘chirildi.
