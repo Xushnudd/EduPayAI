@@ -388,7 +388,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: nol to‘lovli o‘quvchi ham chiqadi; to‘liq/ortiqcha to‘lovli chiqmaydi; N+1 yo‘q; boshqa oy to‘lovi aralashmaydi.
   - Tekshirish: TASK.md misoli, bir nechta qisman to‘lov va qo‘shni oylar bilan solishtirish.
 
-- [ ] TASK-018 — Talabdagi qarzdorlar endpointi
+- [x] TASK-018 — Talabdagi qarzdorlar endpointi
   - Tavsif: GET `/debtors?month=YYYY-MM`ni service’ga ulash; month majburiy.
   - Bog‘liq: TASK-017, TASK-008.
   - Fayllar: `src/app/debtors/route.ts`.
@@ -669,10 +669,10 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 18 |
-| Qolgan | 28 |
-| Bajarilish foizi | 39.1% |
-| Hozirgi bosqich | TASK-017 tekshirildi |
+| Bajarilgan | 19 |
+| Qolgan | 27 |
+| Bajarilish foizi | 41.3% |
+| Hozirgi bosqich | TASK-018 tekshirildi |
 | Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.

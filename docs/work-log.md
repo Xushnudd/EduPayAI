@@ -94,3 +94,7 @@ Taxminan 1 daqiqa. Kabisa oyi, dekabr-yanvar, 0001 yil, 9999-12 va Toshkent oy a
 ### TASK-017 — 2026-10-21T10:40:39+00:00
 
 Taxminan 1 daqiqa. Real PostgreSQL: Ali 200000, Sardor 450000, Vali yo‘q; qo‘shni oy Ali 500000. Ikki bulk query, RepeatableRead, Decimal birlashtirish.
+
+### TASK-018 — 2026-10-21T10:41:01+00:00
+
+Taxminan 1 daqiqa. Aynan /debtors?month=2026-10 HTTP 200; yo‘q/invalid month 400; paymentdan keyin yangi natija, ortiqcha to‘lovli student ro‘yxatdan chiqdi.
