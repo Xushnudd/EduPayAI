@@ -106,3 +106,7 @@ Davom sessiyasi 20:23–20:27 Asia/Tashkent, taxminan 4 daqiqa (oldingi sessiya 
 ### TASK-041 — 2026-10-21T15:29:25+00:00
 
 20:27–20:29 Asia/Tashkent, taxminan 2 daqiqa. DB kutish 60 soniya bilan chegaralangan, lokal Prisma deploy va exec Next startup yozildi. Missing/invalid/unreachable DB timeout va secret-log tekshiruvlari o‘tdi. tests/container/startup-smoke.py Podman image bilan real PostgreSQL’da PASS: kechikkan DB, yangi migratsiya, API HTTP 200, qayta deploy no pending, SIGTERM (SIGKILLsiz), buzilgan migratsiya nonzero va server ochilmasligi. Image production build, lint/typecheck, shell/JS syntax va git diff --check o‘tdi. QA konteynerlari edupay-startup-d0b7e74f-{db,app,bad} to‘xtatilgan, saqlangan; network edupay-startup-d0b7e74f-net. Dastlab tayyorlangan edupay-task041-db konteyneri ishga tushirilmagan, edupay-task041-qa network saqlangan; hech qanday mavjud volume yoki baza o‘chirilmadi. Docker Compose umumiy sinovi TASK-043 uchun qoladi.
+
+### TASK-042 — 2026-10-21T15:30:53+00:00
+
+Taxminan 1 daqiqa. Compose JSON konfiguratsiyasi validatsiyadan o‘tdi: faqat app/db, app loopback:3000, db portisiz, db DNS URL, PostgreSQL 18 /var/lib/postgresql named volume, healthcheck va service_healthy. Secret qiymatlar chiqarilmadi. Bu konfiguratsiya tekshiruvi; umumiy Compose runtime sinovi TASK-043’da qoladi.

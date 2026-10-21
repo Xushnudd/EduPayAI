@@ -572,7 +572,7 @@ Mavjud TASK-001–038 saqlanadi. Yangi ID’lar bajarilish vaqti emas; haqiqiy t
   - Mezon: DB kutiladi; migratsiya tugamaguncha server ochilmaydi; xatoda nonzero exit; avtomatik seed/reset/cheksiz retry yo‘q; signal Next.js jarayoniga yetadi.
   - Tekshirish: izolyatsiyalangan test DB’da yangi/takroriy migratsiya, kechikkan DB va ataylab xato migratsiya; yakuniy Compose sinovi TASK-043’da.
 
-- [ ] TASK-042 — Ikki servisli Compose
+- [x] TASK-042 — Ikki servisli Compose
   - Tavsif: app/db, xususiy tarmoq, named volume, DB healthcheck va startup bog‘liqligini yozish.
   - Bog‘liq: TASK-039, TASK-041.
   - Fayllar: `compose.yaml`.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 21 |
-| Qolgan | 25 |
-| Bajarilish foizi | 45.7% |
-| Hozirgi bosqich | TASK-041 tekshirildi |
-| Keyingi vazifa | TASK-042 — Ikki servisli Compose |
+| Bajarilgan | 22 |
+| Qolgan | 24 |
+| Bajarilish foizi | 47.8% |
+| Hozirgi bosqich | TASK-042 tekshirildi |
+| Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 
