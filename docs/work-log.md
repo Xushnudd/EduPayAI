@@ -167,12 +167,13 @@ Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, native host PostgreSQL smok
 - Yangi Podman volume’da healthcheck, app↔db DNS, migratsiya, UI/API, 300000.00 to‘lov va 200000.00 qarz tasdiqlandi. App restart, `down/up` va rebuild’dan keyin student/payment/debt saqlandi; DB porti hostga publish qilinmadi; app faqat loopback’da edi.
 - App stop SIGTERM bilan yakunlandi (`143`, signal 15’ning odatiy exit kodi; timeout/SIGKILL bo‘lmadi). Volume test tugagach o‘chirildi. TASK-044 pass.
 
-### TASK-045 — npm dev (qisman; ochiq)
+### TASK-045 — Docker’siz npm dev (yakunlandi)
 
-- Node.js 22.23.3 bilan host process sifatida `npm run dev` ishga tushdi; alohida local-development DB’ga migratsiya qo‘llandi. Browser HTTP, student CRUD, payment/history/debt 200000.00 va source’dagi vaqtinchalik markerning hot reload’i o‘tdi; marker qaytarildi, faqat test student o‘chirildi.
-- Native PostgreSQL o‘rnatilmagan va `sudo -n` huquqi yo‘q edi. Fedora 44 rasmiy PostgreSQL 18.6 x86_64 RPM’lari `/tmp`’ga yuklandi va shu yerda ochildi; loopback-only host process va `/tmp` data directory’da ko‘tarildi. Tizimga paket o‘rnatilmadi; testdan keyin server to‘xtatilib, vaqtinchalik fayllar tozalandi.
-- Alohida `edupay_native` va `edupay_native_test` bazalari yaratilib, migration va API integration suite native PostgreSQL’da o‘tdi. Host `npm run dev` UI/CRUD/tahrirlash/to‘lov/tarix/qarz 200000→250000 qayta hisoblash va source hot reload’ni ko‘rsatdi; test fixture o‘chirildi.
-- Smoke paytida Docker containerlari va Podman socket ishlamayotgan edi, ammo root-owned `dockerd` system service active qoldi. Uni vaqtincha to‘xtatish so‘rovi auto-review tomonidan rad etildi: daemon/socket to‘xtashi boshqa xizmatlarga ta’sir qilishi, keng topshiriq esa bunday shared-service uzilishini aniq ruxsatlamasligi aytildi. Buni boshqa buyruq bilan aylanib o‘tishga urinilmadi; foydalanuvchidan vaqtinchalik to‘xtatish va qayta yoqish uchun aniq ruxsat so‘raldi. Shuning uchun qat’iy “container engine o‘chiq” mezoni bajarilmadi va TASK-045 ochiq.
+- Dastlabki npm dev/native PostgreSQL smoke’da system Docker active qolganligi sabab engine-off mezoni hali ochiq edi. Foydalanuvchi Docker service/socket’ni vaqtincha to‘xtatib, testdan so‘ng qayta yoqishga aniq ruxsat berdi.
+- Fedora 44 rasmiy PostgreSQL 18.6 x86_64 RPM’lari `/tmp`’ga yuklanib, vaqtincha ochildi; tizimga paket o‘rnatilmadi. `/tmp` data directory va alohida `edupay_native` hamda `edupay_native_test` bazalari yaratildi; migration deploy va `npm run test:integration` native PostgreSQL’da 1/1 o‘tdi. App/test DB’lar ajratilgan.
+- Docker service/socket hamda Podman user socket inactive va ishlayotgan container yo‘q holatda Node.js 22.23.3 bilan `npm run dev` host process sifatida ishga tushdi. Bosh sahifa HTTP 200, student create/update/delete, 300000.00 to‘lov, to‘lov tarixi va qarz 200000.00→250000.00 qayta hisobi tasdiqlandi; fixture o‘chirildi.
+- `src/app/page.tsx`ga vaqtinchalik hot-reload marker qo‘shilib, dev javobida ko‘rinishi tekshirildi; marker olib tashlanib, sahifa yana HTTP 200 qaytargani va faylda diff qolmagani tasdiqlandi. Docker yoki build buyrug‘i talab qilinmadi.
+- Testdan so‘ng native PostgreSQL to‘xtatildi va `/tmp` fayllari tozalandi. Docker service/socket qayta active holatga keltirildi; tekshiruvda containerlar yo‘q edi. TASK-045 pass.
 
 ### TASK-036 — toza checkout qabul sinovi
 
@@ -187,16 +188,17 @@ Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, native host PostgreSQL smok
 - `origin` `git@github.com:Xushnudd/EduPayAI.git`; yakuniy kod/hujjatlar `develop` branch’ga `624ed45`, README test-env tuzatishi `3b6924e` commitlari bilan push qilindi.
 - Remote’dan clean clone olindi, anonim HTTPS `200` bilan ko‘rinishi tekshirildi. `.env`, build/dependency kataloglari hamda o‘zgartirilmagan `TASK.md` commitga kirmadi. TASK-037 pass.
 
-### TASK-038 — Telegram topshirish (tayyor, yuborilmadi)
+### TASK-038 — Telegram topshirish (yuborildi)
 
-- GitHub havolasi, 6 gapli AI hisoboti, vaqt va ochiq muhit cheklovi `docs/submission.md`da tayyorlandi. Joriy sessiyada Telegram connector/plugin topilmadi va browser inventory bo‘sh qaytdi; Plugin Management’da `Telegram` qidiruvi ham natija bermadi. `@code_debugger007`ga yuborilmadi; TASK-038 ochiq.
+- GitHub havolasi, 6 gapli AI hisoboti va jami vaqt `docs/submission.md`da tayyorlandi. Telegram connector/plugin joriy sessiyada mavjud emas, xabarni foydalanuvchi o‘zi yubordi.
+- 2026-10-22: foydalanuvchi tayyor Telegram xabarini yuborganini tasdiqladi; tasdiq asosida TASK-038 yopildi.
 
 ### TASK-046 — Docker/Podman/npm yo‘riqnomalari
 
 - README’ga uch ish rejimi uchun boshlash buyruqlari, env, migratsiya, log, restart/rebuild, loopback/DB portlari va named volume oqibatlari yozildi; buyruqlar Docker, rootless Podman provider va clean checkout’da bajarilib ko‘rildi.
-- Podman tekshiruvi TASK-044’da, host npm oqimi TASK-045 qaydida; TASK-045 cheklovi README va submission’da ochiq yozilgan. TASK-046 pass.
+- Podman tekshiruvi TASK-044’da, host npm oqimi TASK-045 qaydida. TASK-046 pass.
 
 ## Yakuniy vaqt va qolgan ish
 
-- Avvalgi 10/21–10/22 jurnallangan faol bloklar taxminan 32 daqiqa; ushbu davom sessiyasi 12:55–13:42 Asia/Tashkent taxminan 47 daqiqa. Tanaffuslar hisoblanmaydi; jami sarflangan vaqt taxminan 79 daqiqa, ya’ni 1.3 soat (oldingi vazifa qaydlaridagi daqiqalar yaxlitlangan).
-- Bajarilgan: 44/46. Ochiq: TASK-045 — native PostgreSQL bilan container engine’ni o‘chiq holatga keltirish; TASK-038 — Telegram yuborish. Birinchi band system Docker service’ni to‘xtatish uchun admin huquqi talab qilgani, ikkinchisi Telegram UI/connector yo‘qligi sababli.
+- Avvalgi 10/21–10/22 faol bloklar taxminan 32 daqiqa; 12:55–13:42 davomi taxminan 47 daqiqa; TASK-045 engine-off yakuniy smoke va hujjat taxminan 9 daqiqa. Tanaffuslar hisoblanmaydi; jami taxminan 88 daqiqa (1.5 soat), oldingi daqiqalar yaxlitlangan.
+- Bajarilgan: 46/46. Ochiq vazifa qolmadi.

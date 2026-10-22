@@ -540,7 +540,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: GitHub havolasi haqiqiy, ochiq yoki tekshiruvchiga kirish berilgan; lockfile/migratsiya/README mavjud; `TASK.md` o‘zgarmagan.
   - Tekshirish: remote’dan qayta clone, repository ko‘rinishi va topshiriladigan commitni tekshirish. Hisob/repository ma’lumoti bo‘lmasa tashqi qadam bloklangan deb qayd etiladi, muvaffaqiyat o‘ylab topilmaydi.
 
-- [ ] TASK-038 — Yakuniy topshirish paketi va yuborish
+- [x] TASK-038 — Yakuniy topshirish paketi va yuborish
   - Tavsif: GitHub havolasi, yakuniy 5–8 gaplik AI hisoboti va jami sarflangan soatni bitta Telegram xabariga tayyorlash; `@code_debugger007`ga topshirish.
   - Bog‘liq: TASK-037, TASK-035.
   - Fayllar: `docs/submission.md`, `docs/ai-report.md`, `docs/work-log.md`, `PLAN.md`.
@@ -593,7 +593,7 @@ Mavjud TASK-001–038 saqlanadi. Yangi ID’lar bajarilish vaqti emas; haqiqiy t
   - Mezon: alohida uchinchi servis yoki Podman YAML fork’i yo‘q; build/up, healthcheck, DNS, migratsiya, localhost va volume persistence sinalgan; signal/permission xatolari yo‘q.
   - Tekshirish: Docker app’ni to‘xtatib Podman’da TASK-043 smoke oqimini takrorlash. Muhit mavjud bo‘lmasa tekshirilmagan imkoniyat va sababni yozish, moslikni tasdiqlangan deb belgilamaslik; bu vazifa ochiq qoladi. Umumiy fayl o‘zgarsa Docker tekshiruvi takrorlanadi.
 
-- [ ] TASK-045 — Docker’siz npm dev oqimini saqlash
+- [x] TASK-045 — Docker’siz npm dev oqimini saqlash
   - Tavsif: host PostgreSQL va lokal env bilan development/test oqimini konteynerlardan mustaqil tekshirish.
   - Bog‘liq: TASK-032, TASK-039.
   - Fayllar: `docs/work-log.md`, zarur bo‘lsa `package.json`, `src/lib/env.ts`.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 44 |
-| Qolgan | 2 |
-| Bajarilish foizi | 95.7% |
-| Hozirgi bosqich | TASK-036/037/046 tekshirildi; TASK-045 native DB/engine-off, TASK-038 Telegram yuborish ochiq |
-| Keyingi vazifa | TASK-045 — native PostgreSQL bilan engine-off qabul sinovi; so‘ng TASK-038 yuborish |
+| Bajarilgan | 46 |
+| Qolgan | 0 |
+| Bajarilish foizi | 100.0% |
+| Hozirgi bosqich | Barcha vazifalar yakunlandi; foydalanuvchi Telegram yuborilganini tasdiqladi |
+| Keyingi vazifa | Rejada qolgan vazifa yo‘q |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 

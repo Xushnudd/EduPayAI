@@ -2,9 +2,9 @@
 
 - Repository: [Xushnudd/EduPayAI](https://github.com/Xushnudd/EduPayAI) (`develop` branch, public).
 - AI hisoboti: [`ai-report.md`](ai-report.md), olti gap.
-- Sarflangan vaqt: taxminan **1.3 soat (79 daqiqa)**; hisoblash qoidasi va taxminiy faol vaqt `work-log.md`da.
-- Telegram holati: Telegram plugin qidiruvi natija bermadi va browser sessiyasi mavjud emas; quyidagi xabar tayyor, ammo `@code_debugger007`ga yuborilmadi.
-- Ochiq mezon: TASK-045’da native PostgreSQL va npm dev ishladi. Root-owned Docker service/socket’ni vaqtincha to‘xtatish auto-review tomonidan shared-service xavfi sabab rad etildi; aniq ruxsat so‘ralgan.
+- Sarflangan vaqt: taxminan **1.5 soat (88 daqiqa)**; hisoblash qoidasi va taxminiy faol vaqt `work-log.md`da.
+- Telegram holati: connector joriy sessiyada mavjud emas edi; foydalanuvchi tayyor xabarni yuborganini tasdiqladi. TASK-038 bajarildi.
+- Tekshiruv: TASK-045 native PostgreSQL bilan Docker va Podman o‘chiq holatda bajarildi; Docker keyin qayta tiklandi. Bajarilgan vazifalar: 46/46.
 
 ## Telegramga tayyor matn
 
@@ -19,6 +19,6 @@ AI hisoboti:
 5. Ushbu ish davomida foydalanuvchi vazifa va biznes qoidalarini belgiladi, lekin undan mustaqil qo‘lda kod tahriri kuzatilmadi.
 6. UI, API bilan ulash, xato holatlari, unit/integration/E2E testlari, README, ish jurnali va topshirish hujjatlarini Codex yaratdi; natijalar lint, typecheck, PostgreSQL, browser va konteyner tekshiruvlari bilan tasdiqlandi.
 
-Sarflangan vaqt: taxminan 1.3 soat (79 daqiqa).
+Sarflangan vaqt: taxminan 1.5 soat (88 daqiqa).
 
-Ochiq tekshiruv: npm dev va native PostgreSQL oqimi o‘tdi, ammo admin huquqi bo‘lmagani sabab container engine’ni to‘liq to‘xtatish mezoni tasdiqlanmadi.
+Qo‘shimcha qabul sinovi: native PostgreSQL, npm dev, CRUD/to‘lov/qarz va hot reload Docker hamda Podman o‘chiq paytda tekshirildi; sinovdan so‘ng Docker qayta yoqildi.
