@@ -129,7 +129,7 @@ Taxminan 3 daqiqa. To‘lov formasi va sahifasi joriy commitda allaqachon mavjud
 
 ## 2026-10-22 — TASK-023–032 va yakuniy davom
 
-Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, yakuniy build tekshiruvi 13:24 Asia/Tashkent atrofida; taxminan 29 daqiqa wall-clock. Build, image pull va test kutishlari shu oraliqqa kiradi. Avvalgi ish davrlari bilan orasidagi tanaffuslar qo‘shilmadi.
+Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, native host PostgreSQL smoke 13:42 Asia/Tashkent atrofida tugadi; taxminan 47 daqiqa wall-clock. Build, image pull va test kutishlari shu oraliqqa kiradi. Avvalgi ish davrlari bilan orasidagi tanaffuslar qo‘shilmadi.
 
 ### TASK-023–028 — UI va integratsiya
 
@@ -170,4 +170,33 @@ Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, yakuniy build tekshiruvi 13
 ### TASK-045 — npm dev (qisman; ochiq)
 
 - Node.js 22.23.3 bilan host process sifatida `npm run dev` ishga tushdi; alohida local-development DB’ga migratsiya qo‘llandi. Browser HTTP, student CRUD, payment/history/debt 200000.00 va source’dagi vaqtinchalik markerning hot reload’i o‘tdi; marker qaytarildi, faqat test student o‘chirildi.
-- Muhitda native host PostgreSQL server yo‘q edi; smoke uchun `127.0.0.1:55432` dagi disposable PostgreSQL container ishladi. Shuning uchun app’ning host npm oqimi ishlashi tasdiqlandi, ammo “container engine o‘chiq + native PostgreSQL” mezoni bajarilmadi. TASK-045 ochiq qoldi.
+- Native PostgreSQL o‘rnatilmagan va `sudo -n` huquqi yo‘q edi. Fedora 44 rasmiy PostgreSQL 18.6 x86_64 RPM’lari `/tmp`’ga yuklandi va shu yerda ochildi; loopback-only host process va `/tmp` data directory’da ko‘tarildi. Tizimga paket o‘rnatilmadi; testdan keyin server to‘xtatilib, vaqtinchalik fayllar tozalandi.
+- Alohida `edupay_native` va `edupay_native_test` bazalari yaratilib, migration va API integration suite native PostgreSQL’da o‘tdi. Host `npm run dev` UI/CRUD/tahrirlash/to‘lov/tarix/qarz 200000→250000 qayta hisoblash va source hot reload’ni ko‘rsatdi; test fixture o‘chirildi.
+- Smoke paytida Docker containerlari va Podman socket ishlamayotgan edi, ammo root-owned `dockerd` system service active qoldi; uni to‘xtatish admin huquqini talab qiladi. Shuning uchun host app/native DB oqimi tasdiqlandi, lekin rejaning qat’iy “container engine o‘chiq” mezoni to‘liq bajarilmadi va TASK-045 ochiq qoladi.
+
+### TASK-036 — toza checkout qabul sinovi
+
+- GitHub’dan `develop` branch’ning `3b6924e` commit’i alohida `/tmp` checkout’ga klonlandi; boshida `.env`, `node_modules` va `.next` yo‘q edi. Repo anonim HTTPS’da `200` javob berdi.
+- README asosida `.env.example` nusxalandi, Docker Compose yangi bo‘sh named volume bilan build/up qilindi, migratsiya avtomatik qo‘llandi, DB healthy va app UI/API ishladi. Yangi student/to‘lovdan 200000.00 qarz qaytdi; app restart hamda `down/up`dan keyin student, tarix va qarz saqlandi.
+- Toza checkout’da `npm ci`, `npx prisma generate`, local DB migration, lint, typecheck, unit, PostgreSQL integration, Playwright E2E (32/32, mobile+desktop), `npm run build`, `npm start` va `npm run dev` bajarildi. Dev/start oqimlari CRUD, to‘lov va qarzni test DB’da qaytardi. Bu checkout bosqichida host PostgreSQL yo‘qligi sabab local DB — alohida disposable PostgreSQL container edi; keyinroq native host DB acceptance TASK-045 bo‘limida bajarildi.
+- README ko‘rigida test runner’lar `.env`ni o‘zlari o‘qimasligi aniqlandi. `.env`ni shell’ga eksport qiladigan buyruqlar qo‘shilib `3b6924e` commit sifatida push qilindi, keyin aynan shu clean checkout’da integration va E2E buyruqlari qayta o‘tdi.
+- Tekshiruv tugagach faqat ushbu clean/Docker/test acceptance project’lar, test bazasi va disposable volume’lar tozalandi. Oldindan mavjud bo‘lgan `pos-full-review-20261016` hamda `postgresql` container yozuvlariga tegilmadi. TASK-036 pass.
+
+### TASK-037 — GitHub
+
+- `origin` `git@github.com:Xushnudd/EduPayAI.git`; yakuniy kod/hujjatlar `develop` branch’ga `624ed45`, README test-env tuzatishi `3b6924e` commitlari bilan push qilindi.
+- Remote’dan clean clone olindi, anonim HTTPS `200` bilan ko‘rinishi tekshirildi. `.env`, build/dependency kataloglari hamda o‘zgartirilmagan `TASK.md` commitga kirmadi. TASK-037 pass.
+
+### TASK-038 — Telegram topshirish (tayyor, yuborilmadi)
+
+- GitHub havolasi, 6 gapli AI hisoboti, vaqt va ochiq muhit cheklovi `docs/submission.md`da tayyorlandi. Ushbu sessiyada Telegram connector yoki ochiq brauzer mavjud emasligi sabab `@code_debugger007`ga yuborish va yuborilganlikni tasdiqlash imkoni bo‘lmadi; soxta yuborish natijasi qayd etilmadi. TASK-038 ochiq.
+
+### TASK-046 — Docker/Podman/npm yo‘riqnomalari
+
+- README’ga uch ish rejimi uchun boshlash buyruqlari, env, migratsiya, log, restart/rebuild, loopback/DB portlari va named volume oqibatlari yozildi; buyruqlar Docker, rootless Podman provider va clean checkout’da bajarilib ko‘rildi.
+- Podman tekshiruvi TASK-044’da, host npm oqimi TASK-045 qaydida; TASK-045 cheklovi README va submission’da ochiq yozilgan. TASK-046 pass.
+
+## Yakuniy vaqt va qolgan ish
+
+- Avvalgi 10/21–10/22 jurnallangan faol bloklar taxminan 32 daqiqa; ushbu davom sessiyasi 12:55–13:42 Asia/Tashkent taxminan 47 daqiqa. Tanaffuslar hisoblanmaydi; jami sarflangan vaqt taxminan 79 daqiqa, ya’ni 1.3 soat (oldingi vazifa qaydlaridagi daqiqalar yaxlitlangan).
+- Bajarilgan: 44/46. Ochiq: TASK-045 — native PostgreSQL bilan container engine’ni o‘chiq holatga keltirish; TASK-038 — Telegram yuborish. Birinchi band system Docker service’ni to‘xtatish uchun admin huquqi talab qilgani, ikkinchisi Telegram UI/connector yo‘qligi sababli.

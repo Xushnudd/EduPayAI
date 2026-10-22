@@ -526,14 +526,14 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 11. Final Verification
 
-- [ ] TASK-036 — Toza muhitda qabul tekshiruvi
+- [x] TASK-036 — Toza muhitda qabul tekshiruvi
   - Tavsif: alohida checkout va bo‘sh DB’da faqat README asosida ishga tushirish; TASK.md 1–3-qismlarini kod/UI/hujjat bilan solishtirish.
   - Bog‘liq: TASK-033, TASK-034, TASK-035, TASK-046.
   - Fayllar: `README.md` (zarur tuzatishlar), `docs/submission.md`, `docs/work-log.md`.
   - Mezon: Docker Compose va Docker’siz npm dev yo‘riqnomalari, migratsiya, saqlanish, test, build/start va mobil asosiy oqim ishlaydi; Podman tekshiruvi yoki aniq muhit cheklovi qayd etilgan; bajarilmagan talab bo‘lsa ochiq ro‘yxatga olingan va imkon qadar tuzatilgan.
   - Tekshirish: toza muhit natijalari, A bo‘lim talablar jadvali va TASK.md misolini qo‘lda tasdiqlash.
 
-- [ ] TASK-037 — GitHub repository’ni tayyorlash
+- [x] TASK-037 — GitHub repository’ni tayyorlash
   - Tavsif: topshiriladigan diffni ko‘rish, secret/build/node_modules yo‘qligini tekshirish, commit/push va reviewer kirishini ta’minlash.
   - Bog‘liq: TASK-036.
   - Fayllar: `.gitignore` (zarur bo‘lsa), `docs/submission.md`, Git tarixi/remote.
@@ -600,7 +600,7 @@ Mavjud TASK-001–038 saqlanadi. Yangi ID’lar bajarilish vaqti emas; haqiqiy t
   - Mezon: container engine o‘chiq holatda npm dev va CRUD/to‘lov/qarz ishlaydi; source o‘zgarishi hot reload’da ko‘rinadi; build yoki Docker buyrug‘i talab qilinmaydi; test DB ajratilgan.
   - Tekshirish: konteyner app’ni to‘xtatish, lokal migratsiya va `npm run dev`, vaqtinchalik UI o‘zgarishini tekshirib qaytarish; lokal test skriptlari.
 
-- [ ] TASK-046 — Docker, Podman va npm yo‘riqnomalarini yakunlash
+- [x] TASK-046 — Docker, Podman va npm yo‘riqnomalarini yakunlash
   - Tavsif: mavjud README’ga uch ish rejimi, env, avtomatik migratsiya, log/stop/restart/rebuild va volume qoidalarini qo‘shish.
   - Bog‘liq: TASK-033, TASK-043, TASK-044, TASK-045.
   - Fayllar: `README.md`, `.env.example`, `docs/work-log.md`.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 41 |
-| Qolgan | 5 |
-| Bajarilish foizi | 89.1% |
-| Hozirgi bosqich | TASK-044 tekshirildi; TASK-045 mezonining native DB/engine-off qismi ochiq |
-| Keyingi vazifa | TASK-036 — Toza muhitda qabul tekshiruvi |
+| Bajarilgan | 44 |
+| Qolgan | 2 |
+| Bajarilish foizi | 95.7% |
+| Hozirgi bosqich | TASK-036/037/046 tekshirildi; TASK-045 native DB/engine-off, TASK-038 Telegram yuborish ochiq |
+| Keyingi vazifa | TASK-045 — native PostgreSQL bilan engine-off qabul sinovi; so‘ng TASK-038 yuborish |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 
