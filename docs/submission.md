@@ -3,8 +3,8 @@
 - Repository: [Xushnudd/EduPayAI](https://github.com/Xushnudd/EduPayAI) (`develop` branch, public).
 - AI hisoboti: [`ai-report.md`](ai-report.md), olti gap.
 - Sarflangan vaqt: taxminan **1.3 soat (79 daqiqa)**; hisoblash qoidasi va taxminiy faol vaqt `work-log.md`da.
-- Telegram holati: quyidagi xabar tayyor, ammo ushbu sessiyada Telegram connector yoki ochiq brauzer yo‘q edi; `@code_debugger007`ga yuborilmadi.
-- Ochiq mezon: TASK-045’da native PostgreSQL va npm dev ishladi, biroq root-owned Docker service’ni to‘xtatish huquqi bo‘lmagani sabab engine-off sharti tekshirilmagan.
+- Telegram holati: Telegram plugin qidiruvi natija bermadi va browser sessiyasi mavjud emas; quyidagi xabar tayyor, ammo `@code_debugger007`ga yuborilmadi.
+- Ochiq mezon: TASK-045’da native PostgreSQL va npm dev ishladi. Root-owned Docker service/socket’ni vaqtincha to‘xtatish auto-review tomonidan shared-service xavfi sabab rad etildi; aniq ruxsat so‘ralgan.
 
 ## Telegramga tayyor matn
 

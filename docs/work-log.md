@@ -172,7 +172,7 @@ Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, native host PostgreSQL smok
 - Node.js 22.23.3 bilan host process sifatida `npm run dev` ishga tushdi; alohida local-development DB’ga migratsiya qo‘llandi. Browser HTTP, student CRUD, payment/history/debt 200000.00 va source’dagi vaqtinchalik markerning hot reload’i o‘tdi; marker qaytarildi, faqat test student o‘chirildi.
 - Native PostgreSQL o‘rnatilmagan va `sudo -n` huquqi yo‘q edi. Fedora 44 rasmiy PostgreSQL 18.6 x86_64 RPM’lari `/tmp`’ga yuklandi va shu yerda ochildi; loopback-only host process va `/tmp` data directory’da ko‘tarildi. Tizimga paket o‘rnatilmadi; testdan keyin server to‘xtatilib, vaqtinchalik fayllar tozalandi.
 - Alohida `edupay_native` va `edupay_native_test` bazalari yaratilib, migration va API integration suite native PostgreSQL’da o‘tdi. Host `npm run dev` UI/CRUD/tahrirlash/to‘lov/tarix/qarz 200000→250000 qayta hisoblash va source hot reload’ni ko‘rsatdi; test fixture o‘chirildi.
-- Smoke paytida Docker containerlari va Podman socket ishlamayotgan edi, ammo root-owned `dockerd` system service active qoldi; uni to‘xtatish admin huquqini talab qiladi. Shuning uchun host app/native DB oqimi tasdiqlandi, lekin rejaning qat’iy “container engine o‘chiq” mezoni to‘liq bajarilmadi va TASK-045 ochiq qoladi.
+- Smoke paytida Docker containerlari va Podman socket ishlamayotgan edi, ammo root-owned `dockerd` system service active qoldi. Uni vaqtincha to‘xtatish so‘rovi auto-review tomonidan rad etildi: daemon/socket to‘xtashi boshqa xizmatlarga ta’sir qilishi, keng topshiriq esa bunday shared-service uzilishini aniq ruxsatlamasligi aytildi. Buni boshqa buyruq bilan aylanib o‘tishga urinilmadi; foydalanuvchidan vaqtinchalik to‘xtatish va qayta yoqish uchun aniq ruxsat so‘raldi. Shuning uchun qat’iy “container engine o‘chiq” mezoni bajarilmadi va TASK-045 ochiq.
 
 ### TASK-036 — toza checkout qabul sinovi
 
@@ -189,7 +189,7 @@ Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, native host PostgreSQL smok
 
 ### TASK-038 — Telegram topshirish (tayyor, yuborilmadi)
 
-- GitHub havolasi, 6 gapli AI hisoboti, vaqt va ochiq muhit cheklovi `docs/submission.md`da tayyorlandi. Ushbu sessiyada Telegram connector yoki ochiq brauzer mavjud emasligi sabab `@code_debugger007`ga yuborish va yuborilganlikni tasdiqlash imkoni bo‘lmadi; soxta yuborish natijasi qayd etilmadi. TASK-038 ochiq.
+- GitHub havolasi, 6 gapli AI hisoboti, vaqt va ochiq muhit cheklovi `docs/submission.md`da tayyorlandi. Joriy sessiyada Telegram connector/plugin topilmadi va browser inventory bo‘sh qaytdi; Plugin Management’da `Telegram` qidiruvi ham natija bermadi. `@code_debugger007`ga yuborilmadi; TASK-038 ochiq.
 
 ### TASK-046 — Docker/Podman/npm yo‘riqnomalari
 
