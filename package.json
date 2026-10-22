@@ -7,11 +7,14 @@
   },
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start --hostname 0.0.0.0",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "db:seed": "prisma db seed"
+    "db:seed": "prisma db seed",
+    "test:unit": "node --import tsx --test tests/unit/*.test.ts",
+    "test:integration": "node --import tsx --test tests/integration/api.test.ts",
+    "test:e2e": "playwright test --config playwright.ui.config.ts"
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.10.1",

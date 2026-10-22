@@ -126,3 +126,48 @@ Taxminan 2 daqiqa. Tafsilot sahifasi, qayta ishlatilgan StudentForm, tarif ta’
 ### TASK-022 — 2026-10-22
 
 Taxminan 3 daqiqa. To‘lov formasi va sahifasi joriy commitda allaqachon mavjud edi; manba ko‘rib chiqildi. `studentId` orqali oldindan tanlash, Toshkent bo‘yicha `todayTashkent()` sanasi, mobil uchun `inputMode="decimal"`, maydon xatolari, yuborish holati va bo‘sh o‘quvchilar uchun `/students` havolasi bor. `tests/ui/payment.spec.ts` ushbu holatlarni qamrab oladi; bu sessiyada test ishga tushirilmadi va runtime natijasi da’vo qilinmaydi. Next.js qo‘llanmasi o‘rnatilgan `node_modules` ichida topilmadi; kodga o‘zgartirish talab qilinmadi.
+
+## 2026-10-22 — TASK-023–032 va yakuniy davom
+
+Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, yakuniy build tekshiruvi 13:24 Asia/Tashkent atrofida; taxminan 29 daqiqa wall-clock. Build, image pull va test kutishlari shu oraliqqa kiradi. Avvalgi ish davrlari bilan orasidagi tanaffuslar qo‘shilmadi.
+
+### TASK-023–028 — UI va integratsiya
+
+- To‘lov tarixi `DD.MM.YYYY` sanasi va kasrli summani aniq ko‘rsatadi; bo‘sh tarix va qayta urinish holati bor. Student tafsilotiga ulandi.
+- Bosh sahifa joriy Toshkent oyini ko‘rsatadigan qarzdorlar dashboard’iga aylandi; oy tanlash, qarz summasi, bo‘sh/xato holati va oldindan oy/o‘quvchi tanlangan to‘lov havolasi bor.
+- Barcha o‘quvchi, to‘lov, tarix va qarzdor ekranlari typed fetch client’ga ulandi. Abortlangan eski oy so‘rovlari yangi natijani bosmaydi; POST takroriy yuborilmaydi.
+- Server field error’lari formadagi inputlarga bog‘langan, qiymatlar saqlanadi; 404, offline, DB va kutilmagan xatolar uchun qayta urinish yoki xavfsiz xabar qo‘shildi. Kutilmagan POST natijasida to‘lov tarixini tekshirish taklif qilinadi.
+- Alohida `error.tsx` va `not-found.tsx` mavjud; pul formatlash browser bundle’da `decimal.js` talab qilmaydi.
+- `npm run lint` va `npm run typecheck` muvaffaqiyatli. Mobil va desktop Playwright suite’lari yakunida 32/32 test o‘tdi.
+
+### TASK-029–032 — test va regressiya
+
+- Unit suite pul arifmetikasi, qarz, kalendar chetlari, validatsiya va Toshkent sanasini tekshiradi; `npm run test:unit` o‘tdi.
+- PostgreSQL 18’da alohida `edupay_test` bazada HTTP API suite o‘tdi: CRUD, noto‘g‘ri JSON/validatsiya, to‘lov tarixi, tarif o‘zgarishi, qisman/to‘liq/ortiqcha to‘lov, qarz va cascade delete.
+- Playwright mobil 360×800 va desktop 1280×800’da CRUD/to‘lov oqimi, qarz hisoboti, tez oy almashtirish, retry/bo‘sh/xato holatlari va UI overflow’ni tekshiradi; yakuniy natija 32 testdan 32 o‘tdi.
+- `npm run lint`, `npm run typecheck`, `npm run test:unit`, `npm run test:integration`, `npm run test:e2e` va `npm run build` o‘tdi. `npm run build` Next.js’ning `--webpack` rejimida bajariladi; standart Turbopack build host sandbox’da local port bind ruxsati olmagani uchun fallback ishlatildi. Build’ni bevosita sandbox ichida bir marta ishga tushirganda TypeScript `--showConfig` parse xatosi kuzatildi, ruxsatli qayta build muvaffaqiyatli yakunlandi. Docker va Podman image build’lari ham production build hamda typecheck’dan o‘tdi.
+- npm audit install loglarida 5 ta high advisory dev/lint dependency zanjirida ko‘rindi; runtime image prune’dan keyin 0 vulnerability qaytdi. Dev dependency’larni majburiy downgrade/upgrade qilinmadi.
+
+### TASK-033–035 — hujjatlar
+
+- `README.md` Node 22, native PostgreSQL/local npm dev, Docker Compose, Podman Compose, env, migratsiya/seed, test, build/start, API namunalari va saqlanish qoidalarini qamraydi.
+- README’da hisoblash taxminlari hamda beshta kelajak taklifi alohida yozilgan.
+- `docs/ai-report.md` olti gapdan iborat bo‘lib, vositalar, samarali prompt, aniqlangan xatolar, tuzatish usuli va inson/AI hissasini ish jurnaliga mos ravishda bayon qiladi.
+
+### TASK-043 — Docker Compose qabul sinovi
+
+- `edupay-task-acceptance-20261022` nomli alohida project va yangi disposable named volume’da build/up bajarildi; faqat app/db servislar ishga tushdi, DB `healthy`, API va bosh sahifa HTTP 200.
+- API orqali test o‘quvchi va 300000.00 to‘lov yaratildi; 2026-10 qarzi 200000.00 qaytdi. App restart, `down` (volume saqlangan)/`up` va app rebuild’dan keyin o‘quvchi, tarix va qarz aynan saqlandi.
+- `prisma migrate status` schema up-to-date dedi; Compose mapping’da app faqat `127.0.0.1:3000`, DB esa host portisiz edi. Migratsiya xatosi/kechikkan DB mexanikasi TASK-041 startup smoke’da Postgres bilan alohida sinovdan o‘tgan. TASK-043 pass.
+- Tekshiruvdan keyin faqat ushbu project’ning container/network’i olib tashlandi; disposable volume keyin alohida tozalandi.
+
+### TASK-044 — Podman Compose qabul sinovi
+
+- Fedora Linux 44 x86_64, rootless Podman 5.8.9 va tashqi Docker Compose provider 5.6.1 bilan ayni `compose.yaml`/`Dockerfile` build/up qilindi. Provider uchun foydalanuvchi `podman.socket` vaqtincha ishga tushirildi va tekshiruvdan so‘ng to‘xtatildi.
+- Yangi Podman volume’da healthcheck, app↔db DNS, migratsiya, UI/API, 300000.00 to‘lov va 200000.00 qarz tasdiqlandi. App restart, `down/up` va rebuild’dan keyin student/payment/debt saqlandi; DB porti hostga publish qilinmadi; app faqat loopback’da edi.
+- App stop SIGTERM bilan yakunlandi (`143`, signal 15’ning odatiy exit kodi; timeout/SIGKILL bo‘lmadi). Volume test tugagach o‘chirildi. TASK-044 pass.
+
+### TASK-045 — npm dev (qisman; ochiq)
+
+- Node.js 22.23.3 bilan host process sifatida `npm run dev` ishga tushdi; alohida local-development DB’ga migratsiya qo‘llandi. Browser HTTP, student CRUD, payment/history/debt 200000.00 va source’dagi vaqtinchalik markerning hot reload’i o‘tdi; marker qaytarildi, faqat test student o‘chirildi.
+- Muhitda native host PostgreSQL server yo‘q edi; smoke uchun `127.0.0.1:55432` dagi disposable PostgreSQL container ishladi. Shuning uchun app’ning host npm oqimi ishlashi tasdiqlandi, ammo “container engine o‘chiq + native PostgreSQL” mezoni bajarilmadi. TASK-045 ochiq qoldi.

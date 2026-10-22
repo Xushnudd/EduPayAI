@@ -1,3 +1,8 @@
+import { DebtorDashboard } from "@/components/debtor-dashboard";
+import { currentMonth } from "@/lib/dates";
+
+export const dynamic = "force-dynamic";
+
 export default function Home() {
-  return <section><p className="font-semibold text-teal-700">EduPay</p><h1 className="mt-6 text-3xl font-bold">O‘quv markazi to‘lovlari</h1><p className="mt-3">O‘quvchilar, to‘lovlar va oylik qarzdorlik hisobi.</p></section>;
+  return <DebtorDashboard initialMonth={currentMonth()} />;
 }

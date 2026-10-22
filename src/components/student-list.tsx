@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { StudentView } from "@/lib/ui-api";
-import { formatMoney } from "@/lib/money";
+import { formatMoney } from "@/lib/ui-format";
 import { UIState } from "./ui-state";
 export function StudentList({ students }: { students: StudentView[] }) {
   if (!students.length) return <UIState kind="empty" message="Hozircha o‘quvchilar yo‘q. Birinchi o‘quvchini qo‘shing." />;

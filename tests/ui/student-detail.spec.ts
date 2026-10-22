@@ -3,6 +3,7 @@ const student = { id: "10000000-0000-4000-8000-000000000001", name: "Ali", phone
 test("detail prefill, tariff warning and safe dialog cancel", async ({ page }) => {
   let deletions = 0;
   await page.route(`**/api/students/${student.id}`, route => { if (route.request().method() === "DELETE") deletions++; return route.fulfill({ json: { data: student } }); });
+  await page.route(`**/api/students/${student.id}/payments`, route => route.fulfill({ json: { data: [] } }));
   await page.goto(`/students/${student.id}`);
   await expect(page.getByLabel("Ism", { exact: true })).toHaveValue("Ali");
   await expect(page.getByText(/oldingi oylarning qarzi/)).toBeVisible();
@@ -15,4 +16,12 @@ test("detail prefill, tariff warning and safe dialog cancel", async ({ page }) =
   await page.keyboard.press("Escape"); await expect(page.getByRole("dialog")).not.toBeVisible(); await expect(trigger).toBeFocused();
   await trigger.click(); await page.getByRole("button", { name: "Bekor qilish" }).click();
   expect(deletions).toBe(0); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test("payment history keeps calendar day and formats decimal amount", async ({ page }) => {
+  await page.route(`**/api/students/${student.id}`, route => route.fulfill({ json: { data: student } }));
+  await page.route(`**/api/students/${student.id}/payments`, route => route.fulfill({ json: { data: [{ id: "p-1", studentId: student.id, paidOn: "2024-02-29", amount: "100.10" }] } }));
+  await page.goto(`/students/${student.id}`);
+  await expect(page.getByText("29.02.2024")).toBeVisible();
+  await expect(page.getByText("100,10 so‘m")).toBeVisible();
 });

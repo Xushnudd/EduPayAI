@@ -425,14 +425,14 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: oldindan tanlangan o‘quvchi qo‘llanadi; standart sana Toshkent bo‘yicha; o‘quvchi yo‘qligida yaratishga yo‘l ko‘rsatiladi.
   - Tekshirish: mobil klaviatura, sana va bo‘sh o‘quvchilar holati.
 
-- [ ] TASK-023 — To‘lov tarixi komponenti
+- [x] TASK-023 — To‘lov tarixi komponenti
   - Tavsif: sana va summalarni aniq ko‘rsatuvchi tarix ro‘yxati.
   - Bog‘liq: TASK-021.
   - Fayllar: `src/components/payment-list.tsx`, `src/app/students/[id]/page.tsx`.
   - Mezon: bo‘sh va uzun tarix sig‘adi, sanalar siljimaydi, kasrli pul formatlanadi.
   - Tekshirish: turli oy/summa misollarini mobil preview’da ko‘rish.
 
-- [ ] TASK-024 — Qarzdorlar ekrani
+- [x] TASK-024 — Qarzdorlar ekrani
   - Tavsif: oy tanlash va ism/guruh/tarif/to‘langan/qarz ro‘yxatini yaratish.
   - Bog‘liq: TASK-019, TASK-016.
   - Fayllar: `src/app/page.tsx`, `src/components/month-picker.tsx`, `src/components/debtors-list.tsx`.
@@ -441,14 +441,14 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 7. API Integration
 
-- [ ] TASK-025 — Umumiy fetch client va o‘quvchi oqimi
+- [x] TASK-025 — Umumiy fetch client va o‘quvchi oqimi
   - Tavsif: typed DTO, xato parsing, talab paytida qayta olish orqali o‘quvchi ekranlarini haqiqiy API’ga ulash.
   - Bog‘liq: TASK-012, TASK-020, TASK-021.
   - Fayllar: `src/lib/api-client.ts`, o‘quvchi sahifalari va komponentlari.
   - Mezon: UI orqali yaratish/tahrirlash/o‘chirishdan keyin yangi holat ko‘rinadi; 204 parsing xatosi yo‘q.
   - Tekshirish: browser’dan CRUD oqimini bajarib DB natijasini tekshirish.
 
-- [ ] TASK-026 — To‘lov, tarix va qarzdorlarni ulash
+- [x] TASK-026 — To‘lov, tarix va qarzdorlarni ulash
   - Tavsif: qolgan ekranlarga API integratsiyasi; muvaffaqiyatli to‘lovdan keyin tarix/qarzdorlikni yangilash.
   - Bog‘liq: TASK-014, TASK-018, TASK-022, TASK-023, TASK-024, TASK-025.
   - Fayllar: `src/lib/api-client.ts`, to‘lov va qarzdorlar sahifalari/komponentlari.
@@ -457,14 +457,14 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 8. Validation & Error Handling
 
-- [ ] TASK-027 — Formadagi maydon xatolari
+- [x] TASK-027 — Formadagi maydon xatolari
   - Tavsif: server validatsiyasini inputlar bilan bog‘lash, noto‘g‘ri ma’lumotni foydalanuvchi yo‘qotmasligini ta’minlash.
   - Bog‘liq: TASK-026, TASK-009.
   - Fayllar: `src/components/student-form.tsx`, `src/components/payment-form.tsx`, `src/components/month-picker.tsx`.
   - Mezon: field error tegishli label bilan, xatodan keyin qiymatlar saqlanadi, tuzatib qayta yuborish mumkin.
   - Tekshirish: bo‘sh maydon, manfiy summa, 3 kasr xonasi va server 400 holati.
 
-- [ ] TASK-028 — Tizim va tarmoq xatolari
+- [x] TASK-028 — Tizim va tarmoq xatolari
   - Tavsif: 404, tarmoq uzilishi, DB nosozligi, kutilmagan xatolar uchun tushunarli UI va server javoblari.
   - Bog‘liq: TASK-027, TASK-008.
   - Fayllar: `src/app/error.tsx`, `src/app/not-found.tsx`, `src/components/ui-state.tsx`, `src/lib/errors.ts`, `src/lib/api-client.ts`.
@@ -473,28 +473,28 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 9. Testing
 
-- [ ] TASK-029 — Unit test to‘plami
+- [x] TASK-029 — Unit test to‘plami
   - Tavsif: pul, kalendar, validatsiya va qarz chegaralariga takrorlanuvchi testlar yozish.
   - Bog‘liq: TASK-015, TASK-016, TASK-017.
   - Fayllar: `tests/unit/`, `vitest.config.ts`, `package.json`, `package-lock.json`.
   - Mezon: E bo‘limidagi unit holatlar qamrab olingan, vaqtga bog‘liq testlarda clock boshqariladi.
   - Tekshirish: `npm run test:unit`.
 
-- [ ] TASK-030 — Haqiqiy PostgreSQL bilan API/DB testlari
+- [x] TASK-030 — Haqiqiy PostgreSQL bilan API/DB testlari
   - Tavsif: izolyatsiyalangan test DB, fixture va tozalash bilan HTTP integratsiya to‘plamini yaratish.
   - Bog‘liq: TASK-005, TASK-012, TASK-014, TASK-018, TASK-028, TASK-029.
   - Fayllar: `tests/integration/`, `tests/helpers/`, `vitest.config.ts`, `package.json`.
   - Mezon: E bo‘limidagi API/DB holatlar o‘tadi; test DB app DB’dan boshqa ekani va maxsus test nomi tekshirilmasdan cleanup ishlamaydi; SQLite bilan almashtirilmaydi.
   - Tekshirish: alohida DB’da `npm run test:integration`; xavfli URL berilganda suite yozishdan oldin to‘xtaydi.
 
-- [ ] TASK-031 — Mobil va desktop E2E
+- [x] TASK-031 — Mobil va desktop E2E
   - Tavsif: haqiqiy UI orqali CRUD, to‘lov, tarix va qarzdorlar oqimini tekshirish.
   - Bog‘liq: TASK-028, TASK-030.
   - Fayllar: `tests/e2e/`, `playwright.config.ts`, `package.json`, `package-lock.json`.
   - Mezon: 360×800 va 1280×800’da asosiy oqimlar o‘tadi; gorizontal overflow yo‘q; label/fokus, bo‘sh/xato holatlari tekshirilgan.
   - Tekshirish: `npm run test:e2e` va telefon o‘lchamida qo‘lda smoke tekshiruvi.
 
-- [ ] TASK-032 — Regressiya va build tekshiruvi
+- [x] TASK-032 — Regressiya va build tekshiruvi
   - Tavsif: topilgan xatolarni tuzatish, mos regressiya testi qo‘shish va yakuniy texnik gate’dan o‘tish.
   - Bog‘liq: TASK-029, TASK-030, TASK-031.
   - Fayllar: faqat aniqlangan muammoga tegishli manba/test fayllari, `docs/work-log.md`.
@@ -503,21 +503,21 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
 
 ### 10. Documentation
 
-- [ ] TASK-033 — Ishga tushirish va API README’si
+- [x] TASK-033 — Ishga tushirish va API README’si
   - Tavsif: B bo‘limdagi lokal ketma-ketlik, PostgreSQL DB/user yaratish buyruqlari, env, migratsiya, seed, test, build/start va API namunalarini yozish.
   - Bog‘liq: TASK-032.
   - Fayllar: `README.md`, `.env.example`.
   - Mezon: noldan clone qilgan dasturchiga barcha buyruqlar bor; aniq `/debtors` URL, pul/sana formati, barcha taxminlar va delete oqibati tushuntirilgan.
   - Tekshirish: buyruqlarni mavjud skriptlar va endpointlar bilan solishtirish.
 
-- [ ] TASK-034 — Kelajakdagi 3–5 taklif
+- [x] TASK-034 — Kelajakdagi 3–5 taklif
   - Tavsif: yana bir hafta berilsa bajariladigan yaxshilanishlarni sabab va foydasi bilan yozish.
   - Bog‘liq: TASK-033.
   - Fayllar: `README.md`.
   - Mezon: 3–5 aniq taklif; masalan kirish nazorati, tarif/qabul tarixi, arxivlash, xizmat oyi bo‘yicha taqsimlash; bajarilgan deb ko‘rsatilmaydi.
   - Tekshirish: takliflar soni va amaldagi funksiyalardan ajratilganini ko‘rish.
 
-- [ ] TASK-035 — Faktlarga asoslangan AI hisoboti
+- [x] TASK-035 — Faktlarga asoslangan AI hisoboti
   - Tavsif: ish jurnalidan foydalangan holda 5–8 gap yozish; vositalar, samarali promptlar, xatolar, topish/tuzatish usuli va inson/AI hissasini ko‘rsatish.
   - Bog‘liq: TASK-002, TASK-032, TASK-034.
   - Fayllar: `docs/ai-report.md`, `docs/work-log.md`.
@@ -579,14 +579,14 @@ Mavjud TASK-001–038 saqlanadi. Yangi ID’lar bajarilish vaqti emas; haqiqiy t
   - Mezon: faqat app va db; bittadan instance; app faqat host loopback 3000’da; DB host portisiz; `db` DNS bilan ulanish; volume yo‘li tanlangan PostgreSQL image’iga mos.
   - Tekshirish: Compose config validatsiyasi (secret chiqarmasdan), servislar/port/network/volume va healthcheck konfiguratsiyasini tekshirish.
 
-- [ ] TASK-043 — Docker ishga tushirish, migratsiya va persistence tekshiruvi
+- [x] TASK-043 — Docker ishga tushirish, migratsiya va persistence tekshiruvi
   - Tavsif: tayyor ilovani Docker Compose’da yangi volume bilan ishga tushirish, yozuv yaratish va qayta ishga tushirishlarda saqlanishini tekshirish.
   - Bog‘liq: TASK-032, TASK-042.
   - Fayllar: `docs/work-log.md`, aniqlangan xatoga tegishli container fayllari.
   - Mezon: localhost:3000’da UI/API ishlaydi; ikkita servis running; schema avtomatik hosil bo‘ladi; restart, down/up va app rebuild’dan keyin o‘quvchi/to‘lov/qarz o‘zgarmaydi; DB host portiga publish qilinmagan; migratsiya xatosida server yopiq.
   - Tekshirish: alohida test project nomi va disposable volume’da create → restart → down (volumesiz) → up → rebuild → read oqimi; sekin DB va noto‘g‘ri migratsiya holati; migratsiya holati/loglarini tekshirish.
 
-- [ ] TASK-044 — Podman Compose mosligi
+- [x] TASK-044 — Podman Compose mosligi
   - Tavsif: ayni YAML va Dockerfile’ni Podman’da, imkon bo‘lsa rootless rejimda tekshirish; engine/provayder/OS’ni qayd etish.
   - Bog‘liq: TASK-043.
   - Fayllar: `docs/work-log.md`, zarur bo‘lsa `compose.yaml`, `Dockerfile`, startup skriptlari.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 26 |
-| Qolgan | 20 |
-| Bajarilish foizi | 56.5% |
-| Hozirgi bosqich | TASK-022 tekshirildi |
-| Keyingi vazifa | TASK-023 — To‘lov tarixi komponenti |
+| Bajarilgan | 41 |
+| Qolgan | 5 |
+| Bajarilish foizi | 89.1% |
+| Hozirgi bosqich | TASK-044 tekshirildi; TASK-045 mezonining native DB/engine-off qismi ochiq |
+| Keyingi vazifa | TASK-036 — Toza muhitda qabul tekshiruvi |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 

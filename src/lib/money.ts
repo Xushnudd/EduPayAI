@@ -3,7 +3,3 @@ import { Decimal } from "decimal.js";
 export const Money = Decimal.clone({ precision: 40 });
 export function moneyString(value: Decimal.Value): string { return new Money(value).toFixed(2); }
 export function debtAmount(fee: Decimal.Value, paid: Decimal.Value): Decimal { return new Money(fee).minus(paid); }
-export function formatMoney(value: string): string {
-  const [whole, fraction] = moneyString(value).split(".");
-  return `${whole.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}.${fraction} so‘m`;
-}
