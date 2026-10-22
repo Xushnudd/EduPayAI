@@ -418,7 +418,7 @@ Har bir band faqat o‘z bajarish mezonlari va tekshiruvi muvaffaqiyatli tugagac
   - Mezon: bekor qilish ma’lumot o‘chirmaydi; tarif o‘zgarishining eski oylarga ta’siri ko‘rinadi; id sahifaga uzatiladi.
   - Tekshirish: modal fokus/bekor qilish va formani tekshirish.
 
-- [ ] TASK-022 — To‘lov kiritish formasi
+- [x] TASK-022 — To‘lov kiritish formasi
   - Tavsif: o‘quvchi tanlash, summa, sana va yuborish holatini qurish.
   - Bog‘liq: TASK-019, TASK-009, TASK-016.
   - Fayllar: `src/app/payments/new/page.tsx`, `src/components/payment-form.tsx`.
@@ -669,11 +669,11 @@ Keyingi AI agent uchun tartib:
 | Ko‘rsatkich | Hozirgi qiymat |
 |---|---|
 | Jami vazifalar | 46 |
-| Bajarilgan | 25 |
-| Qolgan | 21 |
-| Bajarilish foizi | 54.3% |
-| Hozirgi bosqich | TASK-021 tekshirildi |
-| Keyingi vazifa | F bo‘limidagi navbatdagi ochiq vazifa |
+| Bajarilgan | 26 |
+| Qolgan | 20 |
+| Bajarilish foizi | 56.5% |
+| Hozirgi bosqich | TASK-022 tekshirildi |
+| Keyingi vazifa | TASK-023 — To‘lov tarixi komponenti |
 
 Hisoblash: `bajarilgan = [x] bandlar soni`, `qolgan = jami − bajarilgan`, `foiz = bajarilgan / jami × 100` (bir kasr xonasigacha). Reja yozilgani implementatsiya vazifasi bajarildi degani emas. Har vazifa yakunida tekshiruv dalili va vaqt `docs/work-log.md`da, umumiy sonlar bu jadvalda yangilanadi. Yangi vazifa qo‘shilsa ID’lar takrorlanmaydi, jami va bajarilish tartibi yangilanadi.
 

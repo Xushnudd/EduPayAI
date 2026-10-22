@@ -122,3 +122,7 @@ Taxminan 3 daqiqa. StudentForm, StudentList va sahifa yaratildi. Mobil/desktop 4
 ### TASK-021 — 2026-10-21T15:36:39+00:00
 
 Taxminan 2 daqiqa. Tafsilot sahifasi, qayta ishlatilgan StudentForm, tarif ta’siri izohi va native dialog yaratildi. Mobil/desktop 2/2: prefill, id havolasi, initial cancel focus, Escape/cancel focus qaytishi va 0 DELETE, overflow yo‘q. Testdagi bir xil nomli nav/detail link strict locator xatosi main bilan scope qilinib tuzatildi. Lint/typecheck o‘tdi.
+
+### TASK-022 — 2026-10-22
+
+Taxminan 3 daqiqa. To‘lov formasi va sahifasi joriy commitda allaqachon mavjud edi; manba ko‘rib chiqildi. `studentId` orqali oldindan tanlash, Toshkent bo‘yicha `todayTashkent()` sanasi, mobil uchun `inputMode="decimal"`, maydon xatolari, yuborish holati va bo‘sh o‘quvchilar uchun `/students` havolasi bor. `tests/ui/payment.spec.ts` ushbu holatlarni qamrab oladi; bu sessiyada test ishga tushirilmadi va runtime natijasi da’vo qilinmaydi. Next.js qo‘llanmasi o‘rnatilgan `node_modules` ichida topilmadi; kodga o‘zgartirish talab qilinmadi.
