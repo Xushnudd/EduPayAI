@@ -1,0 +1,204 @@
+# EduPay — haqiqiy ish jurnali
+
+## Hisoblash qoidasi
+
+Vaqt: ish sessiyasining kuzatilgan wall-clock oralig‘i, kutish/o‘rnatish bilan birga; parallel amallar ikki marta qo‘shilmaydi. Avvalgi rejalashtirish vaqtiga aniq o‘lchov yo‘q, shu sabab umumiy implementatsiya vaqtiga qo‘shilmaydi. Foydalanuvchi talab va tasdiq berdi; ushbu sessiyadagi kodni Codex yaratmoqda. Inson tomonidan kod tahriri hozircha kuzatilmadi.
+
+## 2026-10-21 — TASK-001, boshlandi
+
+- Sessiya boshi: taxminan 15:28 Asia/Tashkent (10:28 UTC).
+- TASK.md va PLAN.md o‘qildi; Git boshlang‘ich commit: c395dda.
+- Muhitda Node.js/npm topilmadi. Node.js 22.23.3 /tmp’ga yuklandi; SHA-256 rasmiy checksum bilan mos.
+- Sandbox DNS va Podman runtime yozuviga ruxsat bermadi; escalation orqali yuklash va Podman read-only info muvaffaqiyatli bajarildi. Birinchi Podman approval ko‘rib chiqilishi timeout bo‘ldi, bitta qayta urinish o‘tdi.
+- Docker CLI va host PostgreSQL topilmadi; Podman rootless mavjud, Compose provider /usr/local/bin/docker-compose v5.6.0.
+- Next.js 16.4.2, React, TypeScript strict va Tailwind boshlang‘ich fayllari yaratildi; o‘rnatish/tekshiruv davom etmoqda.
+- Samarali prompt: foydalanuvchining har vazifani tekshirish, jurnal, progress va alohida commit bilan bajarish ko‘rsatmasi ish oqimini aniq belgiladi.
+- Holat: TASK-001 hali tugamagan; test natijasi hali yo‘q.
+
+### TASK-001 natijasi
+
+- 15:28–15:34 Asia/Tashkent, taxminan 6 daqiqa (muhit tayyorlash bilan).
+- `npm run lint` va `npm run typecheck`: exit 0; GET / HTTP 200, EduPay matni tekshirildi.
+- PostCSS anonim default export lint warning’i nomlangan config bilan tuzatildi. Sandbox listen EPERM bo‘ldi; ruxsatli lokal server orqali HTTP tekshirildi.
+- npm audit: 5 high yozuv bitta braces transitive development/lint zanjiriga tegishli; runtime o‘rnatishda 0 zaiflik qayd etilgan. Force downgrade qilinmadi; keyingi final auditda qayta tekshiriladi.
+- TASK-001 yakunlandi; Next.js yaratgan AGENTS.md loyiha bilan saqlanadi.
+
+### TASK-002 — 2026-10-21T10:33:09+00:00
+
+Jurnal tekshirildi: boshlanish vaqti, wall-clock hisoblash qoidasi, AI/inson hissasi, haqiqiy xatolar va tekshiruv natijalari bor. TASK-001 vaqt oralig‘iga qo‘shilgan boshlang‘ich yozuvlar takror hisoblanmaydi; ushbu tekshiruv taxminan 1 daqiqa.
+
+### TASK-003 — 2026-10-21T10:33:39+00:00
+
+Taxminan 1 daqiqa. Env valid/yo‘q/noto‘g‘ri URL uchun 3 assertion o‘tdi; .env va .env.local git ignore bilan himoyalangan. Maxfiy qiymatlar browserga uzatilmagan.
+
+### TASK-039 — 2026-10-21T10:33:41+00:00
+
+Taxminan 1 daqiqa. Namunada lokal localhost va Compose db URL ajratildi, POSTGRES qiymatlari mos; secret yo‘q; NEXT_PUBLIC URL yo‘qligi assertion bilan tekshirildi.
+
+### TASK-004 — 2026-10-21T10:35:01+00:00
+
+Taxminan 2 daqiqa. Prisma 7.10.1 client/adapter bilan pinlandi. Student/Payment, Decimal/date, Cascade va indekslar yaratildi. prisma format va validate exit 0. Prisma 7 rasmiy hujjatiga mos pg adapter va ESM tanlandi: https://www.prisma.io/docs/orm/v7 .
+
+### TASK-005 — 2026-10-21T10:35:35+00:00
+
+Taxminan 1 daqiqa. Real PostgreSQL 18: migrate deploy o‘tdi, qayta deploy no pending; zero fee CHECK va orphan Payment FK rad etildi, indekslar psql orqali tekshirildi.
+
+### TASK-006 — 2026-10-21T10:36:01+00:00
+
+Taxminan 1 daqiqa. Lazy server-only singleton yaratildi; typecheck o‘tdi; singleton identity va real SELECT 1 [{ok:1}] tekshirildi. Build paytida DB talab qilinmaydi.
+
+### TASK-007 — 2026-10-21T10:36:31+00:00
+
+Taxminan 1 daqiqa. Seed ikki marta exit 0; real DB count 3 student va 2 payment, dublikat yo‘q. 2026-10 demo oyi aniq; begona yozuvlar o‘chirilmaydi.
+
+### TASK-008 — 2026-10-21T10:37:02+00:00
+
+Taxminan 2 daqiqa. 7 API helper assertion o‘tdi: statuslar, envelope, invalid JSON. tsx CLI sandbox IPC xatosi node --import tsx orqali tuzatildi; DB kerak bo‘lmagan tekshiruv sandbox ichida o‘tdi.
+
+### TASK-009 — 2026-10-21T10:37:04+00:00
+
+Taxminan 1 daqiqa. Zod strict sxemalar: 14 assertion o‘tdi, jumladan summa chegaralari, kabisa, oy, telefon normallashuvi va bo‘sh PATCH.
+
+### TASK-010 — 2026-10-21T10:37:52+00:00
+
+Taxminan 1 daqiqa. Real HTTP POST 201, GET 200, invalid POST 400; Decimal 100.10 aynan saqlandi.
+
+### TASK-011 — 2026-10-21T10:37:57+00:00
+
+Taxminan 1 daqiqa. HTTP GET/PATCH 200; maydonlar saqlandi; empty PATCH va invalid UUID 400, missing UUID 404.
+
+### TASK-011 tekshiruv qaydiga tuzatish
+
+Birinchi PATCH smoke assertion 500 sabab o‘tmadi, lekin orchestration keyingi mark/commit’ni to‘xtatmagan: oldingi TASK-011 muvaffaqiyat qaydi shu paytda noto‘g‘ri edi. Bu agentning jarayon xatosi. Typecheck o‘tdi; yangi yozuv bilan PATCH/GET 200, unchanged fee, empty PATCH 400, invalid UUID 400, missing UUID 404 qayta tekshirilib barchasi o‘tdi. Dastlabki 500 aniq sababi hali isbotlanmagan (dev recompilation vaqtida sodir bo‘lgan); integration testda takror tekshiriladi. Keyingi mark/commit faqat alohida tool natijasi ko‘rilgach bajariladi. Qayta tekshiruv taxminan 1 daqiqa.
+
+### TASK-012 — 2026-10-21T10:38:54+00:00
+
+Taxminan 1 daqiqa. Test student uchun payment yaratildi; HTTP DELETE 204, DB payment count 0, takroriy DELETE 404. Faqat sessiya yaratgan fixture o‘chirildi.
+
+### TASK-013 — 2026-10-21T10:39:14+00:00
+
+Taxminan 1 daqiqa. HTTP payment 201, amount 0.10/date 2024-02-29 aniq; invalid amount 400; missing student 404.
+
+### TASK-014 — 2026-10-21T10:39:32+00:00
+
+Taxminan 1 daqiqa. Ikki oydagi to‘lovlar sana tartibida qaytdi, studentId isolation, bo‘sh tarix 200 [], missing student 404 HTTP tekshirildi.
+
+### TASK-015 — 2026-10-21T10:39:53+00:00
+
+Taxminan 1 daqiqa. Decimal 40-digit hisoblash: 0.10+0.20=0.30, partial debt, overpayment va ustun limitidan katta agregatsiya bo‘yicha 4 assertion o‘tdi.
+
+### TASK-016 — 2026-10-21T10:40:19+00:00
+
+Taxminan 1 daqiqa. Kabisa oyi, dekabr-yanvar, 0001 yil, 9999-12 va Toshkent oy almashishi bo‘yicha 5 assertion o‘tdi.
+
+### TASK-017 — 2026-10-21T10:40:39+00:00
+
+Taxminan 1 daqiqa. Real PostgreSQL: Ali 200000, Sardor 450000, Vali yo‘q; qo‘shni oy Ali 500000. Ikki bulk query, RepeatableRead, Decimal birlashtirish.
+
+### TASK-018 — 2026-10-21T10:41:01+00:00
+
+Taxminan 1 daqiqa. Aynan /debtors?month=2026-10 HTTP 200; yo‘q/invalid month 400; paymentdan keyin yangi natija, ortiqcha to‘lovli student ro‘yxatdan chiqdi.
+
+### TASK-040 — 2026-10-21T15:27:16+00:00
+
+Davom sessiyasi 20:23–20:27 Asia/Tashkent, taxminan 4 daqiqa (oldingi sessiya tanaffusi hisoblanmadi). OpenSSL yetishmasligi base qatlamida openssl/ca-certificates bilan tuzatildi. Podman build exit 0: Prisma generate, Next production build va TypeScript DB’siz o‘tdi. Runner network none’da non-root, lokal Prisma CLI, schema/migratsiyalar va .env/.git yo‘qligi assertion bilan tekshirildi; builder’da ham .env/.git yo‘q. Runtime npm audit 0 vulnerability. Docker CLI yo‘q — Docker moslik tekshiruvi deb da’vo qilinmaydi.
+
+### TASK-041 — 2026-10-21T15:29:25+00:00
+
+20:27–20:29 Asia/Tashkent, taxminan 2 daqiqa. DB kutish 60 soniya bilan chegaralangan, lokal Prisma deploy va exec Next startup yozildi. Missing/invalid/unreachable DB timeout va secret-log tekshiruvlari o‘tdi. tests/container/startup-smoke.py Podman image bilan real PostgreSQL’da PASS: kechikkan DB, yangi migratsiya, API HTTP 200, qayta deploy no pending, SIGTERM (SIGKILLsiz), buzilgan migratsiya nonzero va server ochilmasligi. Image production build, lint/typecheck, shell/JS syntax va git diff --check o‘tdi. QA konteynerlari edupay-startup-d0b7e74f-{db,app,bad} to‘xtatilgan, saqlangan; network edupay-startup-d0b7e74f-net. Dastlab tayyorlangan edupay-task041-db konteyneri ishga tushirilmagan, edupay-task041-qa network saqlangan; hech qanday mavjud volume yoki baza o‘chirilmadi. Docker Compose umumiy sinovi TASK-043 uchun qoladi.
+
+### TASK-042 — 2026-10-21T15:30:53+00:00
+
+Taxminan 1 daqiqa. Compose JSON konfiguratsiyasi validatsiyadan o‘tdi: faqat app/db, app loopback:3000, db portisiz, db DNS URL, PostgreSQL 18 /var/lib/postgresql named volume, healthcheck va service_healthy. Secret qiymatlar chiqarilmadi. Bu konfiguratsiya tekshiruvi; umumiy Compose runtime sinovi TASK-043’da qoladi.
+
+### TASK-019 — 2026-10-21T15:33:32+00:00
+
+Taxminan 3 daqiqa (Chromium o‘rnatish bilan). Mobil 360x800 va desktop 1280x800 Playwright 2/2: navigation, overflow yo‘qligi, skip-link va keyboard focus. Lint/typecheck o‘tdi. Dev server mavjudligi aniqlandi, yangi process to‘xtadi va mavjud server qayta ishlatildi. Chromium OS fallback ogohlantirdi, ammo ikkala browser test o‘tdi.
+
+### TASK-020 — 2026-10-21T15:35:12+00:00
+
+Taxminan 3 daqiqa. StudentForm, StudentList va sahifa yaratildi. Mobil/desktop 4/4 UI test: label, validation, link, empty state, overflow. Lint effect callback ogohlantirishi promise handler bilan tuzatildi; lint/typecheck va qayta browser testlar o‘tdi. Formani ishlatish uchun minimal UI request helper qo‘shildi; umumiy API integratsiya acceptance TASK-025 uchun ochiq, real DB UI oqimi bu vazifada da’vo qilinmaydi.
+
+### TASK-021 — 2026-10-21T15:36:39+00:00
+
+Taxminan 2 daqiqa. Tafsilot sahifasi, qayta ishlatilgan StudentForm, tarif ta’siri izohi va native dialog yaratildi. Mobil/desktop 2/2: prefill, id havolasi, initial cancel focus, Escape/cancel focus qaytishi va 0 DELETE, overflow yo‘q. Testdagi bir xil nomli nav/detail link strict locator xatosi main bilan scope qilinib tuzatildi. Lint/typecheck o‘tdi.
+
+### TASK-022 — 2026-10-22
+
+Taxminan 3 daqiqa. To‘lov formasi va sahifasi joriy commitda allaqachon mavjud edi; manba ko‘rib chiqildi. `studentId` orqali oldindan tanlash, Toshkent bo‘yicha `todayTashkent()` sanasi, mobil uchun `inputMode="decimal"`, maydon xatolari, yuborish holati va bo‘sh o‘quvchilar uchun `/students` havolasi bor. `tests/ui/payment.spec.ts` ushbu holatlarni qamrab oladi; bu sessiyada test ishga tushirilmadi va runtime natijasi da’vo qilinmaydi. Next.js qo‘llanmasi o‘rnatilgan `node_modules` ichida topilmadi; kodga o‘zgartirish talab qilinmadi.
+
+## 2026-10-22 — TASK-023–032 va yakuniy davom
+
+Ish vaqti: manbada kuzatilgan ilk o‘zgarish 12:55, native host PostgreSQL smoke 13:42 Asia/Tashkent atrofida tugadi; taxminan 47 daqiqa wall-clock. Build, image pull va test kutishlari shu oraliqqa kiradi. Avvalgi ish davrlari bilan orasidagi tanaffuslar qo‘shilmadi.
+
+### TASK-023–028 — UI va integratsiya
+
+- To‘lov tarixi `DD.MM.YYYY` sanasi va kasrli summani aniq ko‘rsatadi; bo‘sh tarix va qayta urinish holati bor. Student tafsilotiga ulandi.
+- Bosh sahifa joriy Toshkent oyini ko‘rsatadigan qarzdorlar dashboard’iga aylandi; oy tanlash, qarz summasi, bo‘sh/xato holati va oldindan oy/o‘quvchi tanlangan to‘lov havolasi bor.
+- Barcha o‘quvchi, to‘lov, tarix va qarzdor ekranlari typed fetch client’ga ulandi. Abortlangan eski oy so‘rovlari yangi natijani bosmaydi; POST takroriy yuborilmaydi.
+- Server field error’lari formadagi inputlarga bog‘langan, qiymatlar saqlanadi; 404, offline, DB va kutilmagan xatolar uchun qayta urinish yoki xavfsiz xabar qo‘shildi. Kutilmagan POST natijasida to‘lov tarixini tekshirish taklif qilinadi.
+- Alohida `error.tsx` va `not-found.tsx` mavjud; pul formatlash browser bundle’da `decimal.js` talab qilmaydi.
+- `npm run lint` va `npm run typecheck` muvaffaqiyatli. Mobil va desktop Playwright suite’lari yakunida 32/32 test o‘tdi.
+
+### TASK-029–032 — test va regressiya
+
+- Unit suite pul arifmetikasi, qarz, kalendar chetlari, validatsiya va Toshkent sanasini tekshiradi; `npm run test:unit` o‘tdi.
+- PostgreSQL 18’da alohida `edupay_test` bazada HTTP API suite o‘tdi: CRUD, noto‘g‘ri JSON/validatsiya, to‘lov tarixi, tarif o‘zgarishi, qisman/to‘liq/ortiqcha to‘lov, qarz va cascade delete.
+- Playwright mobil 360×800 va desktop 1280×800’da CRUD/to‘lov oqimi, qarz hisoboti, tez oy almashtirish, retry/bo‘sh/xato holatlari va UI overflow’ni tekshiradi; yakuniy natija 32 testdan 32 o‘tdi.
+- `npm run lint`, `npm run typecheck`, `npm run test:unit`, `npm run test:integration`, `npm run test:e2e` va `npm run build` o‘tdi. `npm run build` Next.js’ning `--webpack` rejimida bajariladi; standart Turbopack build host sandbox’da local port bind ruxsati olmagani uchun fallback ishlatildi. Build’ni bevosita sandbox ichida bir marta ishga tushirganda TypeScript `--showConfig` parse xatosi kuzatildi, ruxsatli qayta build muvaffaqiyatli yakunlandi. Docker va Podman image build’lari ham production build hamda typecheck’dan o‘tdi.
+- npm audit install loglarida 5 ta high advisory dev/lint dependency zanjirida ko‘rindi; runtime image prune’dan keyin 0 vulnerability qaytdi. Dev dependency’larni majburiy downgrade/upgrade qilinmadi.
+
+### TASK-033–035 — hujjatlar
+
+- `README.md` Node 22, native PostgreSQL/local npm dev, Docker Compose, Podman Compose, env, migratsiya/seed, test, build/start, API namunalari va saqlanish qoidalarini qamraydi.
+- README’da hisoblash taxminlari hamda beshta kelajak taklifi alohida yozilgan.
+- `docs/ai-report.md` olti gapdan iborat bo‘lib, vositalar, samarali prompt, aniqlangan xatolar, tuzatish usuli va inson/AI hissasini ish jurnaliga mos ravishda bayon qiladi.
+
+### TASK-043 — Docker Compose qabul sinovi
+
+- `edupay-task-acceptance-20261022` nomli alohida project va yangi disposable named volume’da build/up bajarildi; faqat app/db servislar ishga tushdi, DB `healthy`, API va bosh sahifa HTTP 200.
+- API orqali test o‘quvchi va 300000.00 to‘lov yaratildi; 2026-10 qarzi 200000.00 qaytdi. App restart, `down` (volume saqlangan)/`up` va app rebuild’dan keyin o‘quvchi, tarix va qarz aynan saqlandi.
+- `prisma migrate status` schema up-to-date dedi; Compose mapping’da app faqat `127.0.0.1:3000`, DB esa host portisiz edi. Migratsiya xatosi/kechikkan DB mexanikasi TASK-041 startup smoke’da Postgres bilan alohida sinovdan o‘tgan. TASK-043 pass.
+- Tekshiruvdan keyin faqat ushbu project’ning container/network’i olib tashlandi; disposable volume keyin alohida tozalandi.
+
+### TASK-044 — Podman Compose qabul sinovi
+
+- Fedora Linux 44 x86_64, rootless Podman 5.8.9 va tashqi Docker Compose provider 5.6.1 bilan ayni `compose.yaml`/`Dockerfile` build/up qilindi. Provider uchun foydalanuvchi `podman.socket` vaqtincha ishga tushirildi va tekshiruvdan so‘ng to‘xtatildi.
+- Yangi Podman volume’da healthcheck, app↔db DNS, migratsiya, UI/API, 300000.00 to‘lov va 200000.00 qarz tasdiqlandi. App restart, `down/up` va rebuild’dan keyin student/payment/debt saqlandi; DB porti hostga publish qilinmadi; app faqat loopback’da edi.
+- App stop SIGTERM bilan yakunlandi (`143`, signal 15’ning odatiy exit kodi; timeout/SIGKILL bo‘lmadi). Volume test tugagach o‘chirildi. TASK-044 pass.
+
+### TASK-045 — Docker’siz npm dev (yakunlandi)
+
+- Dastlabki npm dev/native PostgreSQL smoke’da system Docker active qolganligi sabab engine-off mezoni hali ochiq edi. Foydalanuvchi Docker service/socket’ni vaqtincha to‘xtatib, testdan so‘ng qayta yoqishga aniq ruxsat berdi.
+- Fedora 44 rasmiy PostgreSQL 18.6 x86_64 RPM’lari `/tmp`’ga yuklanib, vaqtincha ochildi; tizimga paket o‘rnatilmadi. `/tmp` data directory va alohida `edupay_native` hamda `edupay_native_test` bazalari yaratildi; migration deploy va `npm run test:integration` native PostgreSQL’da 1/1 o‘tdi. App/test DB’lar ajratilgan.
+- Docker service/socket hamda Podman user socket inactive va ishlayotgan container yo‘q holatda Node.js 22.23.3 bilan `npm run dev` host process sifatida ishga tushdi. Bosh sahifa HTTP 200, student create/update/delete, 300000.00 to‘lov, to‘lov tarixi va qarz 200000.00→250000.00 qayta hisobi tasdiqlandi; fixture o‘chirildi.
+- `src/app/page.tsx`ga vaqtinchalik hot-reload marker qo‘shilib, dev javobida ko‘rinishi tekshirildi; marker olib tashlanib, sahifa yana HTTP 200 qaytargani va faylda diff qolmagani tasdiqlandi. Docker yoki build buyrug‘i talab qilinmadi.
+- Testdan so‘ng native PostgreSQL to‘xtatildi va `/tmp` fayllari tozalandi. Docker service/socket qayta active holatga keltirildi; tekshiruvda containerlar yo‘q edi. TASK-045 pass.
+
+### TASK-036 — toza checkout qabul sinovi
+
+- GitHub’dan `develop` branch’ning `3b6924e` commit’i alohida `/tmp` checkout’ga klonlandi; boshida `.env`, `node_modules` va `.next` yo‘q edi. Repo anonim HTTPS’da `200` javob berdi.
+- README asosida `.env.example` nusxalandi, Docker Compose yangi bo‘sh named volume bilan build/up qilindi, migratsiya avtomatik qo‘llandi, DB healthy va app UI/API ishladi. Yangi student/to‘lovdan 200000.00 qarz qaytdi; app restart hamda `down/up`dan keyin student, tarix va qarz saqlandi.
+- Toza checkout’da `npm ci`, `npx prisma generate`, local DB migration, lint, typecheck, unit, PostgreSQL integration, Playwright E2E (32/32, mobile+desktop), `npm run build`, `npm start` va `npm run dev` bajarildi. Dev/start oqimlari CRUD, to‘lov va qarzni test DB’da qaytardi. Bu checkout bosqichida host PostgreSQL yo‘qligi sabab local DB — alohida disposable PostgreSQL container edi; keyinroq native host DB acceptance TASK-045 bo‘limida bajarildi.
+- README ko‘rigida test runner’lar `.env`ni o‘zlari o‘qimasligi aniqlandi. `.env`ni shell’ga eksport qiladigan buyruqlar qo‘shilib `3b6924e` commit sifatida push qilindi, keyin aynan shu clean checkout’da integration va E2E buyruqlari qayta o‘tdi.
+- Tekshiruv tugagach faqat ushbu clean/Docker/test acceptance project’lar, test bazasi va disposable volume’lar tozalandi. Oldindan mavjud bo‘lgan `pos-full-review-20261016` hamda `postgresql` container yozuvlariga tegilmadi. TASK-036 pass.
+
+### TASK-037 — GitHub
+
+- `origin` `git@github.com:Xushnudd/EduPayAI.git`; yakuniy kod/hujjatlar `develop` branch’ga `624ed45`, README test-env tuzatishi `3b6924e` commitlari bilan push qilindi.
+- Remote’dan clean clone olindi, anonim HTTPS `200` bilan ko‘rinishi tekshirildi. `.env`, build/dependency kataloglari hamda o‘zgartirilmagan `TASK.md` commitga kirmadi. TASK-037 pass.
+
+### TASK-038 — Telegram topshirish (yuborildi)
+
+- GitHub havolasi, 6 gapli AI hisoboti va jami vaqt `docs/submission.md`da tayyorlandi. Telegram connector/plugin joriy sessiyada mavjud emas, xabarni foydalanuvchi o‘zi yubordi.
+- 2026-10-22: foydalanuvchi tayyor Telegram xabarini yuborganini tasdiqladi; tasdiq asosida TASK-038 yopildi.
+
+### TASK-046 — Docker/Podman/npm yo‘riqnomalari
+
+- README’ga uch ish rejimi uchun boshlash buyruqlari, env, migratsiya, log, restart/rebuild, loopback/DB portlari va named volume oqibatlari yozildi; buyruqlar Docker, rootless Podman provider va clean checkout’da bajarilib ko‘rildi.
+- Podman tekshiruvi TASK-044’da, host npm oqimi TASK-045 qaydida. TASK-046 pass.
+
+## Yakuniy vaqt va qolgan ish
+
+- Avvalgi 10/21–10/22 faol bloklar taxminan 32 daqiqa; 12:55–13:42 davomi taxminan 47 daqiqa; TASK-045 engine-off yakuniy smoke va hujjat taxminan 9 daqiqa. Tanaffuslar hisoblanmaydi; jami taxminan 88 daqiqa (1.5 soat), oldingi daqiqalar yaxlitlangan.
+- Bajarilgan: 46/46. Ochiq vazifa qolmadi.
