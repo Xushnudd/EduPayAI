@@ -44,6 +44,9 @@ npm run typecheck
 npm run test:unit
 
 # TEST_DATABASE_URL .env da alohida *_test bazasini ko‘rsatsin
+set -a
+. ./.env
+set +a
 npm run test:integration
 npx playwright install chromium
 npm run test:e2e
